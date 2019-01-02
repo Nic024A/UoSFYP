@@ -58,11 +58,6 @@ body{
       padding-right: 10px;
   }
 
-  #plus {
-    float:right;
-    margin-right: 30px;
-  }
-
   /*Side Navigation Bar*/
   
   .side-nav{
@@ -131,6 +126,7 @@ body{
 
   .add-assignment{
     float:right;
+    margin-right: 30px;
   }
   
   /*Boxes*/
@@ -170,9 +166,9 @@ p {
   /*Display Options for Web Page/Tablet*/
   @media(min-width:568px){
     .open-slide{display:none}
-    #plus{display:none}
+    .add-assignment{display:none}
     h2{display:none}
-    #logo {float: right}
+    #uos {float: right; margin-right: 100px;}
    
   }
 
