@@ -140,7 +140,7 @@ body{
 }
 
 #boxes .box{
-  margin:auto;
+  float:left;
   text-align: center;
   width: 30%;
   padding: 16px;
