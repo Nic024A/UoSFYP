@@ -1,0 +1,139 @@
+body{
+    font: 15px/1.5 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/*Main Navigation Bar*/
+
+.navbar{
+    background-color:#082441;
+    overflow:hidden;
+    height:63px;
+  }
+  
+  .navbar a{
+    float:left;
+    display:block;
+    color:#FFFFFF;
+    text-align:left;
+    font-weight: bold;
+    padding:14px 16px;
+    text-decoration:none;
+    font-size:16px;
+  }
+  
+  .navbar ul{
+    margin: 8px 0 0 0;
+    list-style:none;
+  }
+  
+  .navbar a:hover{
+    background-color:#ddd;
+    color:#ffffff;
+  }
+  
+  .navbar h2{
+    color:#f2f2f2;
+    text-align:center;
+    font-weight: bold;
+    padding:5px 16px;
+    text-decoration:none;
+    font-size:16px;
+  }
+
+  .navbar i{
+      float: left;
+      padding-right: 10px;
+  }
+
+  #plus {
+    float:right;
+    margin-top: 15px;
+    margin-right: -20px;
+  
+  }
+
+  /*Side Navigation Bar*/
+  
+  .side-nav{
+    height:100%;
+    width: 0;
+    position: fixed;
+    z-index:1;
+    background-color:#CE3F1B;
+    opacity:0.9;
+    overflow-x:hidden;
+    padding-top:60px;
+    transition:0.5s;
+  }
+
+  .side-nav i{
+    float: left;
+    margin-top:10px;
+    color: #ffffff;
+}
+  
+  .side-nav a{
+    padding: 10px 10px 10px 30px;
+    text-decoration:none;
+    font-size:17px;
+    color:#ffffff;
+    display:block;
+    transition:0.3s;
+    font-weight: bold;
+    margin-left:20px;
+    text-align: center;
+    list-style-type: none;
+  }
+  
+  .side-nav ul{
+    list-style-type: none;
+  }
+  .side-nav a:hover{
+    color:#fff;
+  }
+  
+  .side-nav .btn-close{
+    position:absolute;
+    top:0;
+    right:22px;
+    font-size:36px;
+    margin-left:50px;
+  }
+  
+  /*Main Content*/
+  #main{
+    transition:margin-left 0.5s;
+    padding:20px;
+    overflow:hidden;
+    width:100%;
+    background-color: #ddd
+  }
+
+  footer{
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    color: #ffffff;
+    background-color: #e8491d;
+    text-align: center;
+    
+  }
+  
+
+  /*Display Options for Mobile*/
+  @media(max-width:568px){
+    .navbar-nav{display:none}
+    #logo{display:none}
+    
+  }
+  /*Display Options for Web Page/Tablet*/
+  @media(min-width:568px){
+    .open-slide{display:none}
+    #plus{display:none}
+    h2{display:none}
+    #logo {float: right; padding-right: 20px }
+   
+  }
+

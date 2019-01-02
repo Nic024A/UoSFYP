@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Responsive screen size-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "description" content ="Assignment Planner for Students at the University of Sunderland">
+    <meta name = "author" content ="Nichola Armstrong">
+    <title>My Assignment Planner | Welcome</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+     <!--Link to font awesome library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="app.js"></script>
+</head>
+    <body>
+      <!--Top Navigation bar-->
+            <nav class="navbar">
+              <!--On click, call the openSlideMenu() function-->
+                    <span class="open-slide">
+                      <a href="#" onclick="openSlideMenu()">
+                        <!--SVG (Scalable Vector Graphics) defines vector based graphic.-->
+                        <svg width="30" height="30">
+                            <path d="M0,8 30,8" stroke="#fff" stroke-width="5"/>
+                            <path d="M0,17 30,17" stroke="#fff" stroke-width="5"/>
+                            <path d="M0,26 30,26" stroke="#fff" stroke-width="5"/>
+                        </svg>
+                      </a>
+                    </span>
+                    <!--List items that link to web pages, paired with "font awesome" icons for relativity.-->
+                    <ul class="navbar-nav">
+                      <li><a href="index.html"><i class="fa fa-home" style="font-size:24px;"></i>Home</a></li>
+                      <li><a href="assignments.html"><i class="fa fa-list-ul" style="font-size:24px;"></i>Assignments</a></li>
+                      <li><a href="tips.html"><i class="fa fa-info" style="font-size:24px;"></i>Tips</a></li>
+                      <li><a href="goals.html"><i class="fa fa-trophy" style="font-size:24px;"></i>Goals</a></li>
+                    </ul>
+                    <!--University of Sunderland Logo-->
+                    <div id = logo>
+                        <img height="45px" width="30px" src="img/UosLogo.png">
+                    </div>
+                    <!--SVG - icon made by "https://www.flaticon.com/authors/lyolya" from "https://www.flaticon.com/"  licensed by "http://creativecommons.org/licenses/by/3.0/"-->
+                    <svg id = "plus" width="100" height="100">
+                      <!--Shortcut to assignments page via plus icon-->
+                        <a href = "add_assignment.html">
+                          <path d="M1.119,16.841c-0.619,0-1.111-0.508-1.111-1.127c0-0.619,0.492-1.111,1.111-1.111h13.475V1.127  C14.595,0.508,15.103,0,15.722,0c0.619,0,1.111,0.508,1.111,1.127v13.476h13.475c0.619,0,1.127,0.492,1.127,1.111  c0,0.619-0.508,1.127-1.127,1.127H16.833v13.476c0,0.619-0.492,1.127-1.111,1.127c-0.619,0-1.127-0.508-1.127-1.127V16.841H1.119z" fill="#FFFFFF">
+                            </a>
+                          </svg>
+                        <h2>My Assignment Planner</h2>
+              </nav>
+              <!--Side Menu Navigation-->
+                  <div id="side-menu" class="side-nav">
+                    <!--"&times" = X close button -->
+                    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+                    <!--List items that link to web pages, paired with "font awesome" icons for relativity.-->
+                    <ul>
+                      <li><i class="fa fa-home" style="font-size:24px;"></i><a href="index.html">Home</a></li>
+                      <li><i class="fa fa-list-ul" style="font-size:24px;"></i><a href="assignments.html">Assignments</a></li>
+                      <li><i class="fa fa-info" style="font-size:24px;"></i><a href="tips.html">Tips</a></li>
+                      <li><i class="fa fa-trophy" style="font-size:24px;"></i><a href="goals.html">Goals</a></li>
+                      </ul>
+                  </div>
+                  <!--Main Content-->
+                  <div id="main">
+                    <h1>Tips</h1>
+                  </div>
+                  <footer>
+                      <p>UoS Assignment Planner | Nichola Armstrong Copyright  &copy; 2018</p>
+                  </footer>
+    </body>
+</html>
