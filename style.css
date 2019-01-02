@@ -3,6 +3,7 @@ body{
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    width:100%;
 }
 
 .container{
@@ -120,26 +121,18 @@ body{
   }
 
   footer{
-
- 
     color: #ffffff;
     background-color: #e8491d;
     text-align: center;
     width: 100%;
     padding:20px;
     overflow:hidden;
-
-
-    
   }
 
   .add-assignment{
     float:right;
   }
   
-  
-
-
   /*Boxes*/
  #boxes{
   margin: auto;
@@ -149,7 +142,8 @@ body{
   float: left;
   text-align: center;
   width: 30%;
-  padding: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   
 }
 
@@ -157,12 +151,20 @@ body{
   animation: pop 0.3s linear 1;
 }
 
+p {
+  margin: 0 auto;
+  max-width: 300px;
+}
 
+.verb{
+  color: #e8491d;
+  font-weight: bold;
+}
   /*Display Options for Mobile*/
   @media(max-width:568px){
     .navbar-nav{display:none}
     #logo{display:none}
-    #boxes .box{float: none; text-align: center; width: 100%}
+    #boxes .box{ text-align: center; width: 100%}
     
   }
   /*Display Options for Web Page/Tablet*/
