@@ -6,6 +6,12 @@ body{
     overflow-x: hidden;
 }
 
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
 /*Main Navigation Bar*/
 
 .navbar{
@@ -53,8 +59,6 @@ body{
   #plus {
     float:right;
     margin-top: 5px;
-
-  
   }
 
   /*Side Navigation Bar*/
@@ -129,11 +133,32 @@ body{
     float:right;
   }
   
+  
+
+
+  /*Boxes*/
+ #boxes{
+  margin-top: 20px;
+}
+
+#boxes .box{
+  float: left;
+  text-align: center;
+  width: 30%;
+  padding: 16px;
+  
+}
+
+#boxes .box:hover{
+  animation: pop 0.3s linear 1;
+}
+
 
   /*Display Options for Mobile*/
   @media(max-width:568px){
     .navbar-nav{display:none}
     #logo{display:none}
+    #boxes .box{float: none; text-align: center; width: 100%}
     
   }
   /*Display Options for Web Page/Tablet*/
@@ -145,3 +170,6 @@ body{
    
   }
 
+  @keyframes pop{
+    50%  {transform: scale(1.2);}
+  }
