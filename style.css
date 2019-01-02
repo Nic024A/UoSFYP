@@ -142,7 +142,7 @@ body{
 }
 
 #boxes .box{
-  float: left;
+  float: center;
   text-align: center;
   width: 30%;
   padding: 16px;
