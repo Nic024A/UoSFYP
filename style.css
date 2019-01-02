@@ -8,8 +8,9 @@ body{
 
 .navbar{
     background-color:#082441;
-    overflow:hidden;
     height:63px;
+    overflow:hidden;
+    width:100%;
   }
   
   .navbar a{
@@ -49,8 +50,8 @@ body{
 
   #plus {
     float:right;
-    margin-top: 15px;
-    margin-right: -20px;
+    margin-top: 5px;
+
   
   }
 
@@ -113,12 +114,17 @@ body{
 
   footer{
     padding: 10px;
-    width: 100%;
+    overflow:hidden;
+    width:100%;
     margin-top: 10px;
     color: #ffffff;
     background-color: #e8491d;
     text-align: center;
     
+  }
+
+  .add-assignment{
+    float:right;
   }
   
 
@@ -133,7 +139,7 @@ body{
     .open-slide{display:none}
     #plus{display:none}
     h2{display:none}
-    #logo {float: right; padding-right: 20px }
+    #logo {float: right}
    
   }
 
