@@ -2,7 +2,6 @@ body{
     font: 15px/1.5 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
-    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -16,9 +15,15 @@ body{
 
 .navbar{
     background-color:#082441;
-    height:60px;
+    height:40px;
     overflow:hidden;
     width:100%;
+    margin: 0px;
+
+
+    padding:20px;
+
+
   }
   
   .navbar a{
@@ -27,7 +32,7 @@ body{
     color:#FFFFFF;
     text-align:left;
     font-weight: bold;
-    padding:14px 16px;
+    padding:5px 5px;
     text-decoration:none;
     font-size:16px;
   }
@@ -46,7 +51,6 @@ body{
     color:#f2f2f2;
     text-align:center;
     font-weight: bold;
-    padding:5px 16px;
     text-decoration:none;
     font-size:16px;
   }
@@ -119,14 +123,16 @@ body{
   }
 
   footer{
-    padding: 10px;
+
     margin-top: 10px;
     color: #ffffff;
     background-color: #e8491d;
     text-align: center;
+    width: 100%;
     padding:20px;
     overflow:hidden;
-    width:100%;
+
+
     
   }
 
@@ -134,14 +140,16 @@ body{
     float:right;
   }
   
- 
+  
+
+
   /*Boxes*/
  #boxes{
   margin-top: 20px;
 }
 
 #boxes .box{
-  float:left;
+  float: left;
   text-align: center;
   width: 30%;
   padding: 16px;
@@ -171,4 +179,8 @@ body{
 
   @keyframes pop{
     50%  {transform: scale(1.2);}
+  }
+
+  @-ms-viewport{
+    width: device-width;
   }
