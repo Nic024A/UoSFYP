@@ -17,6 +17,7 @@ body{
 .navbar{
     background-color:#082441;
     height:60px;
+    padding:20px;
     overflow:hidden;
     width:100%;
   }
@@ -120,12 +121,13 @@ body{
 
   footer{
     padding: 10px;
-    overflow:hidden;
-    width:100%;
     margin-top: 10px;
     color: #ffffff;
     background-color: #e8491d;
     text-align: center;
+    padding:20px;
+    overflow:hidden;
+    width:100%;
     
   }
 
