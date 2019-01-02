@@ -60,7 +60,7 @@ body{
 
   #plus {
     float:right;
-    margin:auto;
+    margin-right: 30px;
   }
 
   /*Side Navigation Bar*/
