@@ -133,16 +133,14 @@ body{
     float:right;
   }
   
-  
-
-
+ 
   /*Boxes*/
  #boxes{
   margin-top: 20px;
 }
 
 #boxes .box{
-  float: center;
+  margin:auto;
   text-align: center;
   width: 30%;
   padding: 16px;
