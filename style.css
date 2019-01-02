@@ -2,6 +2,8 @@ body{
     font: 15px/1.5 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /*Main Navigation Bar*/
