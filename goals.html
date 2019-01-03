@@ -10,7 +10,7 @@
     <title>My Assignment Planner | Welcome</title>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
      <!--Link to font awesome library-->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="app.js"></script>
 </head>
@@ -28,6 +28,8 @@
                         </svg>
                       </a>
                     </span>
+
+                    <!--Span for add assignment shortcut-->
                     <span class="add-assignment">
                       <a href = "add_assignment.html">
                         <!--SVG - icon made by "https://www.flaticon.com/authors/lyolya" from "https://www.flaticon.com/"  licensed by "http://creativecommons.org/licenses/by/3.0/"-->
@@ -37,42 +39,53 @@
                         </svg>  
                       </a>
                     </span>
-                    <!--List items that link to web pages, paired with "font awesome" icons for relativity.-->
+
+                    <!--Horizontal navbar - Links to pages presented in a list format and are paired with "font awesome" icons for relativity.-->
                     <ul class="navbar-nav">
                       <li><a href="index.html"><i class="fa fa-home" style="font-size:24px;"></i>Home</a></li>
                       <li><a href="assignments.html"><i class="fa fa-list-ul" style="font-size:24px;"></i>Assignments</a></li>
                       <li><a href="tips.html"><i class="far fa-lightbulb" style="font-size:24px;"></i>Tips</a></li>
                       <li><a href="goals.html"><i class="fa fa-trophy" style="font-size:24px;"></i>Goals</a></li>
                     </ul>
-                    <!--University of Sunderland Logo-->
+
+                    <!--University of Sunderland Logo for relativity-->
                     <span class="logo">
-                    <div id = "uos">
-                      <img height="45px" width="30px" src="img/UosLogo.png">
-                    </div>
-                      </span>
-                        <h2>My Assignment Planner</h2>
-              </nav>
+                      <div id = "uos">
+                        <img height="45px" width="30px" src="img/UosLogo.png">
+                      </div>
+                    </span>
+
+                    <!--Navbar title-->
+                    <h2>My Assignment Planner</h2>
+            </nav>
+
               <!--Side Menu Navigation-->
                   <div id="side-menu" class="side-nav">
-                    <!--"&times" = X close button -->
                     <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-                    <!--List items that link to web pages, paired with "font awesome" icons for relativity.-->
-                    <ul>
-                      <li><i class="fa fa-home" style="font-size:24px;"></i><a href="index.html">Home</a></li>
-                      <li><i class="fa fa-list-ul" style="font-size:24px;"></i><a href="assignments.html">Assignments</a></li>
-                      <li><i class="far fa-lightbulb" style="font-size:24px;"></i><a href="tips.html">Tips</a></li>
-                      <li><i class="fa fa-trophy" style="font-size:24px;"></i><a href="goals.html">Goals</a></li>
-                      </ul>
+                      <!--Vertical Naviation - Links to pages presented in a list format paired with "font awesome" icons for relativity.-->
+                      <ul>
+                        <li><i class="fa fa-home" style="font-size:24px;"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-list-ul" style="font-size:24px;"></i><a href="assignments.html">Assignments</a></li>
+                        <li><i class="far fa-lightbulb" style="font-size:24px;"></i><a href="tips.html">Tips</a></li>
+                        <li><i class="fa fa-trophy" style="font-size:24px;"></i><a href="goals.html">Goals</a></li>
+                       </ul>
                   </div>
-                  <div id = "banner">
-                      <p1>Your next assignment is due in 3 days</p1>
-                  </div>
+
+                  <!--Countdown banner to alert users of next assignment.-->
+                  <section id = "banner">
+                      <div class = "container">
+                        <p1>Your next assignment is due in 3 days</p1>
+                      </div>
+                  </section>
+
                   <!--Main Content-->
                   <div id="main">
                     <h1>Goals</h1>
                   </div>
+                  <!--Footer containing app title and copyright info-->
                   <footer>
-                        <p>UoS Assignment Planner | <br> Nichola Armstrong Copyright  &copy; 2018</p>
-                    </footer>
+                      <p1>UoS Assignment Planner | <br>Nichola Armstrong Copyright  &copy; 2018</p1>
+                  </footer>
+                
     </body>
 </html>
