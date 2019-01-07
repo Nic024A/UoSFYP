@@ -12,7 +12,7 @@
      <!--Link to font awesome library-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="app.js"></script>
+
 </head>
     <body>
       <!--Top Navigation bar-->
@@ -108,11 +108,24 @@
                                         <label>Due Date</label>
                                         <input type ="date" name="date">
                                     </p>
-                                   
-                                    <p class = "full">
-                                        <button>Submit</button>
+
+                                    <p>
+                                        <label for="file-upload" class="custom-file-upload">
+                                                <i class="fas fa-upload"></i></i> Upload File
+                                        </label>
+                                            <input id="file-upload" type="file"/>
                                     </p>
-                                   
+
+        
+                            
+                                    <p class = "full">
+                                        <span class = "save">
+                                                <a href="#" onClick = "openSlideMenu()">
+                                            <i class="far fa-check-circle" style="font-size:48px"></i>
+                                            </a>
+                                        </span>
+                                    </p>
+                                    
                                 </form>
                             </div>
                             </div>
@@ -122,6 +135,7 @@
                   <footer>
                       <p1>UoS Assignment Planner | <br>Nichola Armstrong Copyright  &copy; 2018</p1>
                   </footer>
-                
+                  <script src="app.js"></script>
     </body>
+    
 </html>

@@ -132,7 +132,6 @@ h1{
   min-height: 400px;
   background: url(img/grads.jpg);
   overflow:hidden;
-  width:100%;
 
 }
 
@@ -227,17 +226,16 @@ footer, #banner{
       display:grid;
       grid-template-columns: 1fr 2fr;
   }
+}
 
   .wrapper > *{
-      padding:2em;
+    padding:2em;
   }
 
   .company-info h3, .company-info ul, .brand{
-
-      text-align: centre;
+    text-align: centre;
   }
    
-  }
 
 
   .assignment-form{
@@ -263,8 +261,8 @@ footer, #banner{
 
 
 .on-screen-help{
-  background-color: #c9e6ff;
-  color: #485e74;
+  background-color: #acf0db;
+  color: #000000;
 }
 .on-screen-help h3, .on-screen-help ul{
   text-align:center;
@@ -275,7 +273,11 @@ footer, #banner{
   background:#f9feff;
   color:#485e74;
 }
-
+.add h3{
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 20px;
+}
 
 .add form{
   display: grid;
@@ -296,26 +298,33 @@ footer, #banner{
   grid-column: 1 / 3;
 }
 
-.add form button, .add form input {
+ .add form input {
   width:100%;
   padding:1em;
-  border:1px solid #c9e6ff;
+  border:1px solid #97d5dd;
   opacity: 0.5;
+  border-radius: 10px;
 
 }
 
-.add form button {
-  
-  background: #c9e6ff;
-  color: #485e74;
-  font-weight: bold;
-  border: 0;
-  text-transform: uppercase;
 
-}
-
-.add form button:hover, .add form button:focus{
+.save .box:hover{
  background:#9ecef8;
   color: #485e74;
   outline: 0;
+  
 }
+
+.save {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  float: right;
+
+}
+
+.fa-check-circle{
+  color: #90c9b7;
+
+}
+
