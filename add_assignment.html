@@ -85,12 +85,10 @@
                         <div class="wrapper">
                             <div class="on-screen-help">
                                 <h3>Here to add a new assignment? Great!</h3>
-
                             </div>
                             <div class="add">
                                 <h3>Add Assignment</h3>
                                 <form>  
-
                                     <p>
                                         <label>Assignment Title</label>
                                         <input type ="text" name="title">
@@ -99,25 +97,50 @@
                                         <label>Module</label>
                                         <input type ="text" name="module">
                                     </p>
-                                    <p>
-                                        <label>Lecturer</label>
-                                        <input type ="text" name="lecturer">
-                                    </p>
-                               
+
                                     <p>
                                         <label>Due Date</label>
                                         <input type ="date" name="date">
                                     </p>
-
                                     <p>
-                                        <label for="file-upload" class="custom-file-upload">
-                                                <i class="fas fa-upload"></i></i> Upload File
-                                        </label>
-                                            <input id="file-upload" type="file"/>
+                                        <label>Notes</label>
+                                        <input type ="text" name="notes">
                                     </p>
+                               
 
-        
-                            
+                                    <p class = "full">
+                                        <label for="file-upload" class="custom-file-upload">
+                                        <i class="fas fa-upload"></i></i> Upload File
+                                        </label>
+                                        <input id="file-upload" type="file"/>
+                                    </p>
+                                   
+                                    <h3 class = "full">Research</h3>
+                                    <div class="research-pro">
+                                            <svg viewBox="0 0 10 10">
+                                              <circle r="4.5" cx="5" cy="5"></circle>
+                                            </svg>
+                                          </div>
+                                          <p class="slider"><input type="range" min="0" max="100" value="10" id="research"></p>
+                                        
+                                    <h3 class = "full">Development</h3>
+                                    <div class="development-pro">
+                                      <svg viewBox="0 0 10 10">
+                                        <circle r="4.5" cx="5" cy="5"></circle>
+                                      </svg>
+                                    </div>
+                                    <p class = "slider"><input type="range" min="0" max="100" value="5" id="development"></p>
+                                   
+                                
+                                    <h3 class = "full">Report Writing</h3>
+                                    <div class="report-pro">
+                                         <svg viewBox="0 0 10 10">
+                                            <circle r="4.5" cx="5" cy="5"></circle>
+                                        </svg>
+                                    </div>
+                                    <p class = "slider"><input type="range" min="0" max="100" value="10" id="report"></p>
+
+
                                     <p class = "full">
                                         <span class = "save">
                                                 <a href="#" onClick = "openSlideMenu()">
@@ -125,17 +148,69 @@
                                             </a>
                                         </span>
                                     </p>
-                                    
+                                
                                 </form>
+                            
                             </div>
-                            </div>
+                            
                         </div>
+                    
                   </div>
+
+                  
                   <!--Footer containing app title and copyright info-->
                   <footer>
                       <p1>UoS Assignment Planner | <br>Nichola Armstrong Copyright  &copy; 2018</p1>
                   </footer>
                   <script src="app.js"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                  <script>
+                                $(function() {
+                $('.project').each(function() {
+                    var $projectBar = $(this).find('.bar');
+                    var $projectPercent = $(this).find('.percent');
+                    var $projectRange = $(this).find('.ui-slider-range');
+                    $projectBar.slider({
+                    range: "min",
+                    animate: true,
+                    value: 1,
+                    min: 0,
+                    max: 100,
+                    step: 1,
+                    slide: function(event, ui) {
+                        $projectPercent.val(ui.value + "%");
+                    },
+                    change: function(event, ui) {
+                        var $projectRange = $(this).find('.ui-slider-range');
+                        var percent = ui.value;
+                        if (percent < 30) {
+                        $projectPercent.css({
+                            'color': 'red'
+                        });
+                        $projectRange.css({
+                            'background': '#f20000'
+                        });
+                        } else if (percent > 31 && percent < 70) {
+                        $projectPercent.css({
+                            'color': 'gold'
+                        });
+                        $projectRange.css({
+                            'background': 'gold'
+                        });
+                        } else if (percent > 70) {
+                        $projectPercent.css({
+                            'color': 'green'
+                        });
+                        $projectRange.css({
+                            'background': 'green'
+                        });
+                        }
+                    }
+                    });
+                })
+                })</script>
+
     </body>
     
 </html>
