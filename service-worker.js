@@ -26,7 +26,10 @@ const PRECACHE_URLS = [
     'goals.html',
     'tips.html',
     'style.css',
-    'app.js'
+    'app.js',
+    'img/grads.jpg',
+    'img/UosLogo.jpg'
+
 ];
 
 // The install handler takes care of precaching the resources we always need.
