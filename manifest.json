@@ -3,6 +3,8 @@
    "name": "UoS Assignment Planner",
    "short_name": "UoS Planner",
    "lang": "en-US",
+   "background_color":"#082441",
+   "theme_color":"#082441",
    "start_url": "https://nic024a.github.io/UoSFYP/index.html",
    "display": "standalone",
 	"icons": [
