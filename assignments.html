@@ -50,8 +50,8 @@
                     </span>
 
                     <!--Span for add assignment shortcut-->
-                    <span class="add-assignment">
-                      <a href = "add_assignment.html">
+                    <span class="add-assignment" onclick="document.getElementById('id01').style.display='block'" style="width:auto">
+                      <a href = "#">
                         <!--SVG - icon made by "https://www.flaticon.com/authors/lyolya" from "https://www.flaticon.com/"  licensed by "http://creativecommons.org/licenses/by/3.0/"-->
                         <svg id = "plus" width="30" height="30">
                           <!--Shortcut to assignments page via plus icon-->
@@ -142,19 +142,19 @@
                         </div>
                     
                         <div class="addModal">
-                          <h1>Add a new assignment</h2>
+                          <h1>Add assignment</h2>
 
                             <label for="name"><b>Assignment Name</b></label>
-                            <input type="text" placeholder="Enter Assignment Name.." name="name" required>
+                            <input type="text" class = "field"placeholder="Enter Assignment Name.." name="name" required>
   
                             <label for="module"><b>Module</b></label>
-                            <input type="text" placeholder="Enter Module Name or Code.." name="module" required>
+                            <input type="text" class = "field" placeholder="Enter Module Name or Code.." name="module" required>
                             
                           <label for="duedate"><b>Due Date</b></label><br>
-                          <input type="date" placeholder="Enter Due Date" name="duedate" required>
+                          <input type="date" class = "field" placeholder="Enter Due Date" name="duedate" required>
 
                           <label for="notes"><b>Notes</b></label><br>
-                          <textarea name = "notes" rows = "10" cols = "30"></textarea>
+                          <textarea name = "notes" class = "field" rows = "4" cols = "20"></textarea>
                             
                           <button type="submit">Add Assignment</button>
                      
