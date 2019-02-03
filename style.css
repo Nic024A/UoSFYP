@@ -1,3 +1,6 @@
+html{ 
+  height:100%; 
+}
 
 /*Global*/
 body{
@@ -5,6 +8,17 @@ body{
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  min-height:100%;
+  position:relative;
+  background-color: #ddd;
+}
+
+body::after{ content:''; display:block; height:60px; }
+
+footer{ 
+  position:absolute; 
+  bottom:0; 
+  width:100%; 
 }
 
 *{
@@ -170,7 +184,9 @@ line-height: 60px;
   width:100%;
   background-color: #ddd;
   height: 100%;
+ 
 }
+
 
 
 /*Boxes*/
@@ -330,7 +346,8 @@ color: #90c9b7;
 }
 
 .fa-plus-circle{
-  color:#00b38f ;
+  color:#00b38f;
+
   
   }
 
@@ -410,9 +427,10 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 
-.upcoming, .finished{
+.upcoming{
   font-size: 24px;
   margin-left: 5%;
+  text-align: center;
 }
 
 
@@ -442,6 +460,8 @@ button {
   width: 100%;
   font-size: 16px;
   font-family: Roboto,  sans-serif;
+
+
  
 }
 
@@ -543,4 +563,37 @@ span.psw {
 .field:focus{
     outline-color: #00b38f;
     
+}
+
+.upcomingTask{
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+.new-assignment{
+   
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+
+
+.assignment-name{
+  color: #CE3F1B;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 25px;
+  line-height:0.5px;
+}
+
+.assignment-details{
+  font-size: 20px;
+  
+  
 }

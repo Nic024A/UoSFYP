@@ -25,14 +25,14 @@
      <!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) --> 
      <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="img/splash.png"> 
     <link rel="icon" type="image/png" sizes="192x192"  href="images/icons//android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="app.js"></script>
+    
 </head>
     <body>
       <!--Top Navigation bar-->
@@ -50,7 +50,7 @@
                     </span>
 
                     <!--Span for add assignment shortcut-->
-                    <span class="add-assignment" onclick="document.getElementById('id01').style.display='block'" style="width:auto">
+                    <span class="add-assignment" onclick="document.getElementById('modal1').style.display='block'" style="width:auto">
                       <a href = "#">
                         <!--SVG - icon made by "https://www.flaticon.com/authors/lyolya" from "https://www.flaticon.com/"  licensed by "http://creativecommons.org/licenses/by/3.0/"-->
                         <svg id = "plus" width="30" height="30">
@@ -102,77 +102,64 @@
                   <div id="main">
                     <h1>Assignments List</h1>
 
-
                   <!--Upcoming ASSIGNMENTS-->
-                    <div class="container">
-                      <div class="row">
-                          <div class="col s12 m12 l12">
-                              <div class="upcoming">UPCOMING Assignments</div>
-                              <div id="upcomingTask">
-                              </div>
-                          </div>
+
+                    <div class="upcoming">UPCOMING Assignments:</div>
+                      <div id="upcomingTask" style = "padding: 20px; box-sizing: border-box;">
+                         <!--Assignment Cards-->
+                            <div class="new-assignment"></div> 
                       </div>
-                  </div>
-                  <br>
-                  <br>
-                  <!--  Finished ASSIGNMENTS-->
-                  <div class="container">
-                      <div class="row">
-                          <div class="col s12 m12 l12">
-                              <div class="finished"> FINISHED Assignments</div>
-                              <div id="finishedTask">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <br>
-                  <br>
+                      <br>
+                      <br>
 
                   <!--Add Button-->
                     <span class = "save">
                       <a href="#">
-                        <i class="fas fa-plus-circle"  style="font-size:48px" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"></i>
+                        <i class="fas fa-plus-circle"  style="font-size:48px" onclick="document.getElementById('modal1').style.display='block'" style="width:auto;"></i>
                       </a>
                     </span>
 
-                    <div id="id01" class="modal">
-                      <form class="modal-content animate">
+
+                    
+                <!--Add Assignment -->
+                    <div id="modal1" class="modal">
+                      <form class="modal-content animate" id = "addAssignmentForm" >
                         <div class="imgcontainer">
-                          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                          <span onclick="document.getElementById('modal1').style.display='none'" class="close" title="Close Modal">&times;</span>
                         </div>
                     
                         <div class="addModal">
                           <h1>Add assignment</h2>
 
-                            <label for="name"><b>Assignment Name</b></label>
-                            <input type="text" class = "field"placeholder="Enter Assignment Name.." name="name" required>
+                            <label for="name"><b>Assignment Name *</b></label>
+                            <input type="text" class = "field"placeholder="Enter Assignment Name.." name="name" id = "name" required>
   
                             <label for="module"><b>Module</b></label>
-                            <input type="text" class = "field" placeholder="Enter Module Name or Code.." name="module" required>
+                            <input type="text" class = "field" placeholder="Enter Module Name or Code.." name="module" id = "module" required>
                             
-                          <label for="duedate"><b>Due Date</b></label><br>
-                          <input type="date" class = "field" placeholder="Enter Due Date" name="duedate" required>
+                          <label for="duedate"><b>Due Date *</b></label><br>
+                          <input type="date" class = "field" placeholder="Enter Due Date" name="duedate" id = "duedate" required>
 
                           <label for="notes"><b>Notes</b></label><br>
-                          <textarea name = "notes" class = "field" rows = "4" cols = "20"></textarea>
+                          <textarea name = "notes" class = "field" rows = "4" cols = "20" id = "notes"></textarea>
+
+                          <label for="file-upload" class="custom-file-upload"><i class="fas fa-upload"></i></i> Upload File</label>
+                            <input id="file-upload" type="file"/>
                             
-                          <button type="submit">Add Assignment</button>
+                          <button type = "submit">Add Assignment</button>
                      
                         </div>
-        
                       </form>
                     </div>
-                    
-                  </div>
-
-
-
-
                 </div>
                   <!--Footer containing app title and copyright info-->
                   <footer>
                       <p1>UoS Assignment Planner | <br>Nichola Armstrong Copyright  &copy; 2018</p1>
                   </footer>
+                  <script src = "node_modules/jquery/dist/jquery.min.js"></script>
+                  <script src = "node_modules/jquery/dist/jquery.js"></script>
+                  <script src="app.js"></script>
+                  
                 
     </body>
 </html>
