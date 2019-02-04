@@ -2,105 +2,6 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
 
-/*$(document).ready(function(){
-  //Open Database
-  var request = indexedDB.open('assignments',1);
-  
-  request.onupgradeneeded = function(e){
-      var db = e.target.result;
-  
-          if(!db.objectStoreNames.contains('assignments')){
-              var os = db.createObjectStore('assignments', {keyPath: "id", autoIncrement:true});
-              //Create Index for name
-              os.createIndex('name', 'name', {unique:false});
-          }
-  }
-  
-  //Success
-  request.onsuccess = function(e){
-      console.log('Success: Opened Database...');
-      db = e.target.result;
-      //Show Assignments
-     // showAssignments();
-  }
-  
-      //Error
-      request.onerror = function(){
-      console.log('Error: Could not open database');
-  }
-    
-  });
-  
-  
-  //Add Assignment
-  function addAssignment(){
-      var name = $('#name').val();
-      var module = $('#module').val();
-      var duedate = $('#duedate').val();
-      var notes = $('#notes').val();
-  
-      var transaction = db.transaction(['assignments'], "readwrite");
-  
-      //Ask for Object Store
-      var store = transaction.objectStore('assignments');
-  
-      //Define Assignment
-      var assignment = {
-          name: name,
-          module: module,
-          duedate: duedate,
-          notes: notes
-  
-      }
-  
-      //Perform the Add
-      var request = store.add(assignment);
-  
-      //Success 
-      request.onsuccess = function(e){
-          window.location.href = 'assignments.html';
-  
-      }
-  
-      //Error
-      request.onerror = function(e){
-          alert("Sorry the Assignment was not added.");
-          console.log('Error:', e.target.error.name);
-      }
-  }
-  
-  //Display Assignments
-function showAssignments(e){
-  var transation = db.transaction(['assignments'], "readonly");
-
-  //Ask for Object Store
-  var store = transaction.objectStore('assignments');
-  var index = store.index('name');
-
-  var output = '';
-  index.openCursor().onsucess = function(e){
-    var cursor = e.target.result;
-    if (cursor){
-      output += "<div class = 'new_assignment'>";
-      output+= "<h1>"+cursor.value.name+"</h1>";
-      output+= "<h2>"+cursor.value.module+"</h2>";
-      output+= "<h2>"+cursor.value.duedate+"</h2>";
-      output+= "<h2>"+cursor.value.notes+"</h2>";
-      output+= "</div>";
-      cursor.continue();
-    }
-
-    $('upcomingTask').html(output);
-  }
-
-
-
-
-}
-
-
-*/
-
 
 // Open Database
 
@@ -131,6 +32,7 @@ request.onupgradeneeded = function (e) {
 // Event Handler 
 
   document.getElementById('addAssignmentForm').addEventListener('submit', addToDatabase);
+  
 
 //Add Assignment
 
@@ -225,13 +127,20 @@ function PrintToDom(docs) {
         unCompletedAssignment.map((item) => {
             upcomingTaskContainer.innerHTML += ` 
             <div class="new-assignment">
-                <h5 class="assignment-name">  ${item.name}</h5>
-                <div class="assignment-details" > Module: ${item.module}</div>
-                <div class="assignment-details" > Due Date: ${item.duedate}</div>
-                <div class="assignment-details" > Notes: ${item.notes}</div>
+            <span onclick = "document.getElementById('modal2').style.display='block'; setIdToLocalStorage(${item.id})" style="width:auto;" class = "editAssignment">
+            <i class="fas fa-pencil-alt"></i>
+            </span>
+            <h5 class="assignment-name">  ${item.name}</h5>
+            <span onclick = "deleteAssignmentFromDatabase(${item.id})" class = "deleteAssignment">
+            <i class="fas fa-trash-alt"></i>
+            </span>
+            <div class="assignment-details" > Module: ${item.module}</div>
+            <div class="assignment-details" > Due Date: ${item.duedate}</div>
+            <div class="assignment-details" > Notes: ${item.notes}</div>
+               
               
             </div>
-            <br><br>
+            <br>
         `;
         })
     } else {
@@ -255,7 +164,7 @@ function deleteAssignmentFromDatabase(id) {
 
 // Update data
 
-function updateAssignmentInDatabase() {
+function updateAssigmentInDatabase() {
 
     let id = localStorage.getItem('assignmentToUpdate');
     var objectStore = database.transaction(["allAssignments"], "readwrite")
@@ -280,11 +189,11 @@ function updateAssignmentInDatabase() {
         assignment.module = updatedModule;
         assignment.duedate = updatedDueDate;
         assignment.notes = updatedNotes;
-        assignment.taskDone = doneStatus.checked ? true : false;
 
         const requestUpdate = objectStore.put(assignment);
         requestUpdate.onsuccess = e => {
             getAllFromDatabase();
+           
         };
         requestUpdate.onerror = e => console.log('Some error!');
     }
@@ -302,10 +211,6 @@ function setIdToLocalStorage(id) {
         localStorage.setItem('id', id);
     };
 }
-
-
-
-
 
 
 

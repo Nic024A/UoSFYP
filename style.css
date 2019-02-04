@@ -29,6 +29,7 @@ box-sizing:border-box;
 width: 100%;
 margin: auto;
 overflow: hidden;
+height: auto;
 }
 
 h1{
@@ -483,7 +484,7 @@ button:hover {
   position: relative;
 }
 
-.addModal {
+.addModal, .editModal{
   padding: 16px;
   border-radius: 10%;
 }
@@ -588,12 +589,23 @@ span.psw {
   color: #CE3F1B;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 20px;
   line-height:0.5px;
 }
 
 .assignment-details{
-  font-size: 20px;
+  font-size: 16px;
   
   
+}
+
+.editAssignment{
+  float:right;
+  font-size: 25px;
+  color: #CE3F1B;
+}
+.deleteAssignment{
+  float:right;
+  font-size: 25px;
+  color: #CE3F1B;
 }
