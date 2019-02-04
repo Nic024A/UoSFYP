@@ -164,7 +164,7 @@ function deleteAssignmentFromDatabase(id) {
 
 // Update data
 
-function updateAssigmentInDatabase() {
+function updateAssignmentInDatabase() {
 
     let id = localStorage.getItem('assignmentToUpdate');
     var objectStore = database.transaction(["allAssignments"], "readwrite")
@@ -178,7 +178,6 @@ function updateAssigmentInDatabase() {
         let updatedModule = document.getElementById("updateModule").value;
         let updatedDueDate = document.getElementById("updateDueDate").value;
         let updatedNotes = document.getElementById("updateNotes").value;
-        let doneStatus = document.getElementById('checkbox');
         document.getElementById("updateName").value = "";
         document.getElementById("updateModule").value = "";
         document.getElementById("updateDueDate").value = "";

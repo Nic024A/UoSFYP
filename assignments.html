@@ -168,21 +168,21 @@
                           <h1>Edit assignment</h2>
 
                             <label for="updateName"><b>Assignment Name *</b></label>
-                            <input type="text" class = "field"placeholder="Enter Assignment Name.." name="name" id = "updateName" required>
+                            <input type="text" placeholder="Enter Assignment Name.." name="name" id = "updateName" required>
 
                             <label for="updateModule"><b>Module</b></label>
-                            <input type="text" class = "field" placeholder="Enter Module Name or Code.." name="module" id = "updateModule" required>
+                            <input type="text"  placeholder="Enter Module Name or Code.." name="module" id = "updateModule" required>
                             
                           <label for="updateDueDate"><b>Due Date *</b></label><br>
-                          <input type="date" class = "field" placeholder="Enter Due Date" name="duedate" id = "updateDueDate" required>
+                          <input type="date"  placeholder="Enter Due Date" name="duedate" id = "updateDueDate" required>
 
                           <label for="updateNotes"><b>Notes</b></label><br>
-                          <textarea name = "notes" class = "field" rows = "4" cols = "20" id = "updateNotes"></textarea>
+                          <textarea name = "notes"  rows = "4" cols = "20" id = "updateNotes"></textarea>
 
                           <label for="file-upload" class="custom-file-upload"><i class="fas fa-upload"></i></i> Upload File</label>
                             <input id="file-upload" type="file"/>
                             
-                          <button onClick="updateAssignmentInDatabase()" type = "submit" >Update Assignment</button>
+                          <button type = "submit" onClick="updateAssignmentInDatabase()"  >Update Assignment</button>
                     
                         </div>
                       </form>
