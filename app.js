@@ -194,6 +194,7 @@ function updateAssignmentInDatabase() {
         const requestUpdate = objectStore.put(assignment);
         requestUpdate.onsuccess = e => {
             getAllFromDatabase();
+
         };
         requestUpdate.onerror = e => console.log('Some error!');
     }
