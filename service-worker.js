@@ -22,7 +22,6 @@ const PRECACHE_URLS = [
     'index.html',
     './', // Alias for index.html
     'assignments.html',
-    'add_assignment.html',
     'goals.html',
     'tips.html',
     'style.css',

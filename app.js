@@ -63,8 +63,10 @@ function addToDatabase(e) {
 
     request.onsuccess = e => {
         getAllFromDatabase();
+   
         window.location.href = 'assignments.html';
-        alert('Success! Your Assignment has been added!!!')
+        
+        
         console.log('Written with e => ', e)
     };
     request.onerror = e => console.log('Error with e => ', e);
@@ -192,7 +194,6 @@ function updateAssignmentInDatabase() {
         const requestUpdate = objectStore.put(assignment);
         requestUpdate.onsuccess = e => {
             getAllFromDatabase();
-           
         };
         requestUpdate.onerror = e => console.log('Some error!');
     }
@@ -224,3 +225,4 @@ function openSlideMenu(){
     document.getElementById('main').style.marginLeft = '0';
   }
 
+  
