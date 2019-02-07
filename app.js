@@ -139,9 +139,12 @@ function PrintToDom(docs) {
             <div class="assignment-details" > Module: ${item.module}</div>
             <div class="assignment-details" > Due Date: ${item.duedate}</div>
             <div class="assignment-details" > Notes: ${item.notes}</div>
-               
+             
               
             </div>
+            <div class = "view_assets" onclick="document.getElementById('modal3').style.display='block'">View Assets</div> 
+            <div class = "track_progress" onclick="document.getElementById('modal4').style.display='block'">Track Progress</div> 
+            <br>
             <br>
         `;
         })

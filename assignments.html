@@ -107,7 +107,8 @@
                     <div class="upcoming">UPCOMING Assignments:</div>
                       <div id="upcomingTask" style = "padding: 20px; box-sizing: border-box;">
                          <!--Assignment Cards-->
-                            <div class="new-assignment"></div> 
+                            <div class="new-assignment"></div>
+                            <div class = "view_assets">Assets</div>
                             
                       </div>
                       <br>
@@ -146,8 +147,7 @@
                           <label for="notes"><b>Notes</b></label><br>
                           <textarea name = "notes" class = "field" rows = "4" cols = "20" id = "notes"></textarea>
 
-                          <label for="file-upload" class="custom-file-upload"><i class="fas fa-upload"></i></i> Upload File</label>
-                            <input id="file-upload" type="file"/>
+                  
                             
                           <button type = "submit" >Add Assignment</button>
                      
@@ -179,10 +179,57 @@
                           <label for="updateNotes"><b>Notes</b></label><br>
                           <textarea name = "notes"  rows = "4" cols = "20" id = "updateNotes"></textarea>
 
+                        
+                            
+                          <button type = "submit" onClick="updateAssignmentInDatabase()"  >Update Assignment</button>
+                    
+                        </div>
+                      </form>
+                    </div>
+
+
+
+                    
+                    <!--Upload Assets-->
+                    <div id="modal3" class="modal">
+                      <form class="modal-content animate" id = "updateAssignmentForm" >
+                        <div class="imgcontainer">
+                          <span onclick="document.getElementById('modal3').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        </div>
+
+                        <div class="assetModal">
+                          <h1>Upload Assets</h2>
+
                           <label for="file-upload" class="custom-file-upload"><i class="fas fa-upload"></i></i> Upload File</label>
                             <input id="file-upload" type="file"/>
                             
-                          <button type = "submit" onClick="updateAssignmentInDatabase()"  >Update Assignment</button>
+                          <button type = "submit" >Save</button>
+                    
+                        </div>
+                      </form>
+                    </div>
+
+
+            
+                    <!--Track Progress -->
+                    <div id="modal4" class="modal">
+                      <form class="modal-content animate" id = "updateAssignmentForm" >
+                        <div class="imgcontainer">
+                          <span onclick="document.getElementById('modal4').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        </div>
+
+                        <div class="progressModal">
+                          <h1>Track Progress</h2>
+                          <h2>Lets set some targets.</h2>
+                          <p>For example, you could add "I aim to complete all research by the end of May."</p>
+                          <span class = "save">
+                            <a href="#">
+                              <i class="fas fa-plus-circle"  style="font-size:48px"  ></i>
+                            </a>
+                          </span>
+                         
+                            
+                          <button type = "submit">Save</button>
                     
                         </div>
                       </form>
