@@ -25,7 +25,11 @@ const PRECACHE_URLS = [
     'goals.html',
     'tips.html',
     'style.css',
-    'app.js'
+    'app.js',
+    'manifest.json',
+    'img/UosLogo.png',
+    'img/grads.jpg'
+ 
 
 ];
 
