@@ -153,7 +153,7 @@ function PrintToDom(docs) {
         `;
         })
     } else {
-        upcomingTaskContainer.innerHTML = `<div class="white-text" style="font-size: 20px; text-align: center;">You currently have no upcoming assignments. Tap '+' to add.
+        upTask.innerHTML = `<div class="white-text" style="font-size: 20px; text-align: center;">You currently have no upcoming assignments. Tap '+' to add.
         </div>`
     }
 
