@@ -112,7 +112,10 @@ function addToDatabase(e) {
 function PrintToDom(docs) {
     localStorage.setItem("assignmentArray", JSON.stringify(docs));
     let upcomingTaskContainer = document.getElementById('upcomingTask');
-    document.getElementById('upcomingTask').innerHTML = "";
+    var upTask = document.getElementById('upcomingTask');
+      if(upTask){
+        upTask.innerHTML = "";
+      }
     let completedAssignment = [];
     let unCompletedAssignment = [];
     docs.map(item => {
