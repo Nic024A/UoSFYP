@@ -30,9 +30,10 @@ request.onupgradeneeded = function (e) {
 };
 
 // Event Handler 
-
-  document.getElementById('addAssignmentForm').addEventListener('submit', addToDatabase);
-  
+  var addtoDB = document.getElementById('addAssignmentForm');
+    if(addtoDB){
+      addtoDB.addEventListener('submit', addToDatabase);
+    }
 
 //Add Assignment
 
