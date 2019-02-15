@@ -116,16 +116,13 @@ function PrintToDom(docs) {
       if(upTask){
         upTask.innerHTML = "";
       }
-    let completedAssignment = [];
     let unCompletedAssignment = [];
     docs.map(item => {
 
-        if (item.status) {
-            completedAssignment.push(item);
-        } else {
+       
             unCompletedAssignment.push(item);
-        }
     })
+  
 
     // Upcoming Assignments
 
@@ -137,9 +134,12 @@ function PrintToDom(docs) {
             <i class="fas fa-pencil-alt"></i>
             </span>
             <h5 class="assignment-name">  ${item.name}</h5>
-            <span onclick = "deleteAssignmentFromDatabase(${item.id})" class = "deleteAssignment">
+           
+            <span onclick = "deletetheAssignmentFromDatabase(${item.id})" class = "deleteAssignment">
             <i class="fas fa-trash-alt"></i>
             </span>
+           
+         
             <div class="assignment-details" > Module: ${item.module}</div>
             <div class="assignment-details" > Due Date: ${item.duedate}</div>
             <div class="assignment-details" > Notes: ${item.notes}</div>
@@ -161,15 +161,22 @@ function PrintToDom(docs) {
 
 // Delete data
 
-function deleteAssignmentFromDatabase(id) {
+function deletetheAssignmentFromDatabase(id) {
+if (confirm('Are you sure you want to delete this assignment?')) {
     var request = database.transaction(["allAssignments"], "readwrite")
         .objectStore("allAssignments")
         .delete(id);
     request.onsuccess = () => {
         getAllFromDatabase();
     };
-
+    
+} else {
+    // Do nothing!
+}
 };
+
+
+    
 
 // Update data
 
