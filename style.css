@@ -199,13 +199,10 @@ line-height: 60px;
   float: left;
   text-align: center;
   width: 30%;
-  padding: 10px;
+  padding: 5px;
   margin-top: 10px;
 }
 
-#boxes .box:hover{
-  animation: pop 0.3s linear 1;
-}
 
 #boxes p {
   margin: 0 auto;
@@ -247,85 +244,8 @@ line-height: 60px;
 }
 }
 
-.wrapper > *{
-  padding:2em;
-}
 
-.company-info h3, .company-info ul, .brand{
-  text-align: centre;
-}
- 
-/*Add Assignment Form*/
-
-.assignment-form{
-  max-width: 1170px;
-  margin-left:auto;
-  margin-right:auto;
-  padding:1em;
-  line-height: 1.6;
-
-}
-
-
-
-.wrapper{
-box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
-}
-
-.wrapper > *{
-padding: 1em;
-}
-
-
-.on-screen-help{
-background-color: #acf0db;
-color: #000000;
-}
-.on-screen-help h3, .on-screen-help ul{
-text-align:center;
-margin: 0 0 1rem 0;
-}
-
-.add{
-background:#f9feff;
-color:#485e74;
-}
-.add h3{
-text-align: center;
-margin: 0px;
-margin-bottom: 20px;
-}
-
-.add form{
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap:20px;
-}
-
-
-.add form label{
-display:block;
-}
-
-.add form p{
-margin:0;
-}
-
-.add form .full{
-grid-column: 1 / 3;
-padding-top: 20px;
-}
-
-input, textarea{
-width:100%;
-padding:1em;
-border:1px solid #97d5dd;
-opacity: 0.5;
-border-radius: 10px;
-
-}
-
-
+/*Icon Buttons */
 .save .box:hover{
 background:#9ecef8;
 color: #485e74;
@@ -352,82 +272,7 @@ color: #90c9b7;
   
   }
 
-
-.research-pro, .development-pro, .report-pro {
-  width: 100px;
-  position: relative;
-  text-align: center;
-  
-}
-.research-pro svg, .development-pro svg, .report-pro svg{
-  width: 100%;
-  height: 100%;
-  margin-left: 10px;
-  padding: 0;
-  counter-increment: percent var(--percent);
-  -webkit-transform: rotate(-0.25turn);
-          transform: rotate(-0.25turn);
-}
-.research-pro svg circle, .research-pro svg path, .development-pro svg circle, .development-pro svg path, .report-pro svg circle, .report-pro svg path {
-  stroke: #acf0db;
-  stroke-width: 0.75;
-  fill: transparent;
-  stroke-linecap: round;
-  stroke-dasharray: 28.2743280;
-  /* FULL_CIRCLE */
-  stroke-dashoffset: var(--offset);
-}
-.research-pro:after, .development-pro::after, .report-pro::after{
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  content: counter(percent) "%";
-  line-height: 200px;
-  margin-left:10px;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-
-code {
-  color: #90c9b7;
-}
-
-.slider{
-  padding-top:20px;
-}
-input[type=range] {
-  height: 34px;
-  -webkit-appearance: none;
-  margin: 10px 0;
-  width: 100%;
-  padding:20px;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 11px;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000;
-  background: #acf0db;
-  border-radius: 30px;
-  border: 0px solid #010101;
-}
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000031;
-  border: 1px solid #00001E;
-  height: 18px;
-  width: 18px;
-  border-radius: 15px;
-  background: #000000;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -4px;
-}
-
-
+/*Upcoming Title*/
 .upcoming{
   font-size: 24px;
   margin-left: 5%;
@@ -449,8 +294,19 @@ input[type=text], input[type=date] {
        appearance: none;
 }
 
+
+
+input, textarea{
+  width:100%;
+  padding:1em;
+  border:1px solid #97d5dd;
+  opacity: 0.5;
+  border-radius: 10px;
+  
+  }
+
 /* Set a style for all buttons */
-button {
+button, .complete{
   background-color: #00b38f;
   font-weight: bold;
   color: white;
@@ -461,6 +317,7 @@ button {
   width: 100%;
   font-size: 16px;
   font-family: Roboto,  sans-serif;
+  border-radius: 20px;
 
 
  
@@ -486,7 +343,7 @@ button:hover {
 
 .addModal, .editModal, .assetModal, .progressModal{
   padding: 16px;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 span.psw {
@@ -509,12 +366,14 @@ span.psw {
   padding-top: 60px;
 }
 
+
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #ffffff;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  border-radius: 3%;
+  border-radius: 10px;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
@@ -565,13 +424,14 @@ span.psw {
     outline-color: #00b38f;
     
 }
+/*Upcoming Task Container*/
 
 .upcomingTask{
   padding: 20px;
   box-sizing: border-box;
 }
 
-
+/*Assignment Card */
 
 .new-assignment{
    
@@ -584,8 +444,8 @@ span.psw {
     background-color: #ffffff;
 }
 
-
-.view_assets{
+/*View Assets Button */
+.view_assets, #fileinput{
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 5px;
@@ -595,6 +455,8 @@ span.psw {
     font-size: 20px;
     color: #ffffff;
 }
+
+/*Completion Button */
 
 .track_progress{
   width: 100%;
@@ -606,6 +468,8 @@ span.psw {
   font-size: 20px;
   color: #ffffff;
 }
+
+/*Assignment Details*/
 
 .assignment-name{
   color: #CE3F1B;
@@ -620,6 +484,8 @@ span.psw {
   
 }
 
+/*Edit and Delete Icons*/
+
 .editAssignment{
   float:right;
   font-size: 25px;
@@ -631,4 +497,117 @@ span.psw {
   color: #CE3F1B;
 }
 
+#countdown{
+  margin-top:15px;
+}
+
+
+/*Progress Circles */
+.accordion {
+  background-color: #CE3F1B;
+  color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  transition: 0.4s;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+}
+
+.active, .accordion:hover {
+  background-color: #CE3F1B;
+}
+
+.panel {
+  padding: 0 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.container-box{
+	margin: 20px auto;
+	width: 100%;
+	max-width: 200px;
+	text-align: center;
+}
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3;
+}
+.circle {
+  fill: none;
+  stroke-width: 2;
+  stroke: #ff9f00;
+  stroke-linecap: round;
+  transition: all 1s ease-out;
+}
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.45em;
+  text-align: center;
+  text-anchor: middle;
+}
+
+
+.sign {
+
+  max-width: 100%;
+  height: 2em;
+  position: relative;
+  text-align:center;
+ 
+}
+
+.sign p{
+  color: #CE3F1B;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+/*Confetti*/
+.celebrate {
+  position: relative;
+  min-height: 25vh;
+}
+
+[class|="confetti"] {
+  position: absolute;
+}
+
+.red {
+  background-color: #E94A3F;
+}
+
+.yellow {
+  background-color: #FAA040;
+}
+
+.blue {
+  background-color: #5FC9F5;
+}
+
+.u-imgResponsive{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+#modal3 img{
+  width:100%;
+  height: 100%;
+  margin: auto;
+}
 
