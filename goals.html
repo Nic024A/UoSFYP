@@ -101,10 +101,143 @@
                   <!--Main Content-->
                   <div id="main">
                     <h1>Goals</h1>
-                     
+ 
+                 <div class = "container1">
+                  <h3>Goals can help motivate you and give you something to strive for.</h3>
+                  <p>If you need help, click on the tip button for inspiration</p>
+                  <button onclick="document.getElementById('modal6').style.display='block'">Give me inspiration! 💡</button>
                   </div>
-                 
+
+                  <!--UPCOMING Goals-->
+                  <div class = "sign"><p style = "font-size:30px;">Upcoming Goals</p></div><br>
+                  <div id="upcomingGoals" style = "padding: 20px; box-sizing: border-box;">
+                     <!--Goal Cards will be appended here-->
+                  </div>
+                  
+
+                  <!--Add Button-->
+                  <span class = "save">
+                      <a href="#">
+                        <i class="fas fa-plus-circle"  style="font-size:48px"  onclick="document.getElementById('modal1').style.display='block'" style="width:auto;"></i>
+                      </a>
+                    </span>
+
+          <!--Add Assignment -->
+          <div id="modal1" class="modal">
+              <form class="modal-content animate" id = "addGoalForm" >
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('modal1').style.display='none'" class="close" title="Close Modal">&times;</span>
+                </div>
+
+      
+  
+      <div class="addModal">
+        <h1>Add a goal 🎯</h2>
+
+          <label for="goalname"><b>The goal is called:</b></label>
+          <input type="text" class = "field"placeholder="Enter Goal Name.." name="goalname" id = "goalname">
+
+          <label for="date"><b>I aim to complete this goal by:</b></label>
+          <input type="date" class = "field" placeholder="Enter Date.." name="date" id = "date" >
+          
+        <label for="details"><b>This will help me to:</b></label><br>
+        <textarea name = "notes" class = "field" rows = "4" cols = "20" id = "details"></textarea>    
+        <br>
+
+        <button type = "submit" >Add Goal</button>
+            </div>
+            
+
+      </form>
+      </div>
+  
+<!--Add Assignment -->
+<div id="modal6" class="modal">
+    <form class="modal-content animate" id = "smartmodal" >
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('modal6').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+            <div class="addModal">
+              <h1>Think SMART💡</h2>
+                <div class ="container1">
+     
+                  <ul>
+                    <li style =  "font-size: 20px; text-transform: uppercase"><span style = "font-weight: bold; color: #f44336">S</span>pecific</li>
+                    <p>Your goal should be clear and well defined.</p>
+                    <li style =  "font-size: 20px; text-transform: uppercase"><span style = "font-weight: bold; color: #f44336">M</span>easurable</li>
+                    <p>Think about how you can measure your degree of success.</p>
+                    <li style =  "font-size: 20px; text-transform: uppercase"><span style = "font-weight: bold; color: #f44336">A</span>ttainable</li>
+                    <p>Make sure that it's possible to achieve the goals you set.</p>
+                    <li style =  "font-size: 20px; text-transform: uppercase"><span style = "font-weight: bold; color: #f44336">R</span>elevant</li>
+                    <p>Goals should be relevant to the direction you want your life and career to take.</p>
+                    <li style =  "font-size: 20px; text-transform: uppercase"><span style = "font-weight: bold; color: #f44336">T</span>ime Bound</li>
+                    <p>Setting a deadline gives you an aim to strive for.</p>
+                  </ul>
+            <br>
+
+              </div>
+            </div>
+
+            </form>
+            </div>
+
+      <!--Edit Goal-->
+
+      <div id="modal2" class="modal">
+        <form class="modal-content animate" id = "editGoalForm" >
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('modal2').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+
+          
+      
+          <div class="editModal">
+            <h1>Edit a goal 🎯</h2>
+
+              <label for="goalname"><b>The goal is called:</b></label>
+              <input type="text" class = "field"placeholder="Enter Goal Name.." name="goalname" id = "updateGoalName">
+
+              <label for="date"><b>I aim to complete this goal by:</b></label>
+              <input type="date" class = "field" placeholder="Enter Date.." name="date" id = "updateDate" >
+              
+            <label for="details"><b>This will help me to:</b></label><br>
+            <textarea name = "notes" class = "field" rows = "4" cols = "20" id = "updateDetails"></textarea>    
+            <br>
+
+            <button type = "submit" onClick="updateGoalInDatabase()" >Edit Goal</button>
+                </div>
+                
+
+            
+          </form>
+          </div>
+
+      <!--Success Modal-->
+      <div id="modal5" class="modal">
+          <form class="modal-content animate">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('modal5').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="progressModal">
+                <div class="celebrate">
+              <h3 style = "text-align: center">You can do it!</h3>
+              
+                <img class="modal-icon u-imgResponsive" src="img/target.png" alt="Trophy" />
+                <h3 style = "text-align: center">Keep up the good work.</h3>  
+              </div>
+
+            </div>
+     
+        </div>
+
+
+           
+
+                  </div>
+                  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                   <script src="app.js"></script>
+                  <script src="goals.js"></script>
                   <!--Footer containing app title and copyright info-->
                   <footer>
                       <p1>UoS Assignment Planner | <br>Nichola Armstrong Copyright  &copy; 2018</p1>
