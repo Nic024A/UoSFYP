@@ -5,7 +5,20 @@ var request = indexedDB.open('assignments', 4); // verison
 request.onsuccess = function (e) {
     console.log('Database is connected Succesfully!');
     database = e.target.result;
-    getAllFromDatabase();
+
+
+    getAllFromDatabase(function(assignments) {
+        
+        var userDate = new Date(assignments[0].duedate);
+        var userAssignment = assignments[0].name;
+        var today = new Date();
+        var diff = 0;
+        var days = 1000 * 60 * 60 * 24;
+        
+        diff = userDate - today;
+        countdown = document.getElementById("countdown")
+        countdown.innerHTML = Math.floor(diff / days) + ' days until ' + userAssignment + ' is due';
+    });
 };
 
 //Error Handling
@@ -87,7 +100,7 @@ function addToDatabase(e) {
 
   //Read all data from DB
 
-  function getAllFromDatabase() {
+  function getAllFromDatabase(cb) {
       let assignmentArray = [];
       let completedAssignment = [];
       let unCompletedAssignment = [];
@@ -113,12 +126,16 @@ function addToDatabase(e) {
                   cursor.continue();
               }
               
-              PrintToDom(assignmentArray)
-              
+              PrintToDom(assignmentArray) 
+              cb(assignmentArray);            
           }
-          
 
-  };
+  }
+
+
+
+
+
 
     // Print to DOM
 
@@ -167,7 +184,6 @@ function addToDatabase(e) {
         ;
 
         })
-
     } else {
         upTask.innerHTML = `<div class="white-text" style="font-size: 20px; text-align: center;">You currently have no upcoming assignments. Tap '+' to add.
         </div>`
@@ -185,6 +201,7 @@ function addToDatabase(e) {
                 .delete(id);
             request.onsuccess = () => {
                 getAllFromDatabase();
+                location.reload();
             };
             
         } else {
@@ -510,6 +527,7 @@ function addToDatabase(e) {
                         .delete(id);
                     request.onsuccess = () => {
                         getAllFromDatabase();
+                        location.reload();
                     };
 
                    //Show success Modal and start confetti
@@ -520,20 +538,9 @@ function addToDatabase(e) {
                     // Do nothing!
                 }
                 };
-                
-                function calcCountdown(){
-                    var assignmentdate = document.getElementsByClassName("duedate");
-                    var userDate = new Date(assignmentdate)
-                    var today = new Date();
-                    var diff = 0;
-                    var days = 1000 * 60 * 60 * 24;
-                    
-                    diff = userDate - today;
-                    countdown = document.getElementById('days')
-                    countdown.innerHTML += Math.floor(diff / days) + ' days until next assignment';
-                
-                
-                }
+
+          
+            
          
                     $(document).ready(function() {
                         showImages();
@@ -562,3 +569,4 @@ function addToDatabase(e) {
                     }
     
      
+                    

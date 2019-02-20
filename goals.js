@@ -5,7 +5,20 @@ var request = indexedDB.open('goals', 4); // verison
 request.onsuccess = function (e) {
     console.log('Database is connected Succesfully!');
     database = e.target.result;
-    getAllFromDatabase();
+
+    getallgoals(function(goals) {
+        
+        var userDate = new Date(goals[0].date);
+        var userGoal = goals[0].goalname;
+        var today = new Date();
+        var diff = 0;
+        var days = 1000 * 60 * 60 * 24;
+        
+        diff = userDate - today;
+        countdown = document.getElementById("countdown")
+        countdown.innerHTML = Math.floor(diff / days) + ' days until ' + userGoal + ' due date';
+    });
+    //getallgoals();
 };
 
 //Error Handling
@@ -55,7 +68,7 @@ function addGoalToDatabase(e) {
       
 
     request.onsuccess = e => {
-        getAllFromDatabase();
+        getallgoals();
    
         window.location.href = 'goals.html';
         
@@ -69,7 +82,7 @@ function addGoalToDatabase(e) {
 
   //Read all data from DB
 
-  function getAllFromDatabase() {
+  function getallgoals(cb) {
       let goalArray = [];
       var request = database.transaction(["allGoals"], "readwrite")
           .objectStore("allGoals")
@@ -91,6 +104,7 @@ function addGoalToDatabase(e) {
               }
               
               PrintToDom(goalArray)
+              cb(goalArray)
               
           }
           
@@ -133,7 +147,7 @@ function addGoalToDatabase(e) {
             <div class="assignment-details" > I aim to complete this goal by: ${item.date}</div>
             <div class="assignment-details" > This will help me to: ${item.details}</div>
             </div>
-            <div class = "track_progress" onclick="completeGoalInDatabase(${item.id})">Mark as Complete</div>
+            <div class = "track_progress" onclick="completeGoalInDatabase(${item.id})">Complete 🏆</div>
             <br>
             <br>
         `
@@ -158,7 +172,8 @@ function addGoalToDatabase(e) {
                 .objectStore("allGoals")
                 .delete(id);
             request.onsuccess = () => {
-                getAllFromDatabase();
+                getallgoals();
+                location.reload();
             };
             
         } else {
@@ -196,7 +211,7 @@ function addGoalToDatabase(e) {
            
                 const requestUpdate = objectStore.put(goal);
                 requestUpdate.onsuccess = e => {
-                    getAllFromDatabase();
+                    getallgoals();
 
                 };
                 requestUpdate.onerror = e => console.log('Some error!');
@@ -224,7 +239,8 @@ function addGoalToDatabase(e) {
                     .objectStore("allGoals")
                     .delete(id);
                 request.onsuccess = () => {
-                    getAllFromDatabase();
+                    getallgoals();
+                    location.reload();
                 };
 
                //Show success Modal and start confetti
@@ -288,4 +304,6 @@ function addGoalToDatabase(e) {
               }
             
 
-              
+                            
+                
+            
