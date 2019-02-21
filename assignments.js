@@ -17,7 +17,7 @@ request.onsuccess = function (e) {
         
         diff = userDate - today;
         countdown = document.getElementById("countdown")
-        countdown.innerHTML = Math.floor(diff / days) + ' days until ' + userAssignment + ' is due';
+        countdown.innerHTML = Math.floor(diff / days) + ' days until "' + userAssignment + '" is due';
     });
 };
 
@@ -202,6 +202,7 @@ function addToDatabase(e) {
             request.onsuccess = () => {
                 getAllFromDatabase();
                 location.reload();
+                
             };
             
         } else {
@@ -527,7 +528,7 @@ function addToDatabase(e) {
                         .delete(id);
                     request.onsuccess = () => {
                         getAllFromDatabase();
-                        location.reload();
+                        
                     };
 
                    //Show success Modal and start confetti
@@ -538,10 +539,12 @@ function addToDatabase(e) {
                     // Do nothing!
                 }
                 };
+            //Refresh page when user completes an assignment so the countdown banner is updated
+                function refreshPage(){
+                        location.reload();
+                }
 
-          
-            
-         
+
                     $(document).ready(function() {
                         showImages();
                     

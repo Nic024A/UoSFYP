@@ -16,7 +16,7 @@ request.onsuccess = function (e) {
         
         diff = userDate - today;
         countdown = document.getElementById("countdown")
-        countdown.innerHTML = Math.floor(diff / days) + ' days until ' + userGoal + ' due date';
+        countdown.innerHTML = Math.floor(diff / days) + ' days until your goal: "' + userGoal + '" is due';
     });
     //getallgoals();
 };
@@ -240,7 +240,7 @@ function addGoalToDatabase(e) {
                     .delete(id);
                 request.onsuccess = () => {
                     getallgoals();
-                    location.reload();
+                   
                 };
 
                //Show success Modal and start confetti
@@ -252,6 +252,10 @@ function addGoalToDatabase(e) {
             }
             };
 
+           //Refresh page when user completes an assignment so the countdown banner is updated
+           function refreshPage(){
+                 location.reload();
+            }
                //Confetti Celebration when user completes assignment.
 
                for (var i = 0; i < 250; i++) {
