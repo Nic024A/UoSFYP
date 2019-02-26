@@ -16,6 +16,10 @@ if ('serviceWorker' in navigator) {
             document.getElementById('main').style.marginLeft = '0';
         }
 
-  
 
+        $(document).ready(function() {
+          $('.click').on('click',function() {
+            $(this).toggleClass('flip');
+          });       
+        });
         
