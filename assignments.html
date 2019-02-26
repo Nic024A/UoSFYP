@@ -93,7 +93,9 @@
 
                   <!--Countdown banner to alert users of next assignment.-->
                   <section id = "banner">
-                      <div id = "countdown"></div>
+                      <div class = "container">
+                        <p1>Your next assignment is due in 3 days</p1>
+                      </div>
                   </section>
 
                   <!--Main Content-->
@@ -101,12 +103,16 @@
                     <h1>Assignments List</h1>
 
                   <!--Upcoming ASSIGNMENTS-->
-                  <div class = "sign"><p style = "font-size:24px;">UPCOMING Assignments</p></div><br>
-                  <div id="upcomingTask">
-                     <!--Assignments Cards will be appended here-->
-                  </div>
-                  <br>
-                   <br>
+
+                    <div class="upcoming">UPCOMING Assignments:</div>
+                      <div id="upcomingTask" style = "padding: 20px; box-sizing: border-box;">
+                         <!--Assignment Cards-->
+                            <div class="new-assignment"></div>
+                            <div class = "view_assets">Assets</div>
+                            
+                      </div>
+                      <br>
+                      <br>
 
                   <!--Add Button-->
                     <span class = "save">
@@ -130,77 +136,21 @@
                           <h1>Add assignment</h2>
 
                             <label for="name"><b>Assignment Name *</b></label>
-                            <input type="text" class = "field"placeholder="Enter Assignment Name.." name="name" id = "name">
+                            <input type="text" class = "field"placeholder="Enter Assignment Name.." name="name" id = "name" required>
   
                             <label for="module"><b>Module</b></label>
-                            <input type="text" class = "field" placeholder="Enter Module Name or Code.." name="module" id = "module" >
+                            <input type="text" class = "field" placeholder="Enter Module Name or Code.." name="module" id = "module" required>
                             
                           <label for="duedate"><b>Due Date *</b></label><br>
-                          <input type="date" class = "field" placeholder="Enter Due Date" name="duedate" id = "duedate" >
+                          <input type="date" class = "field" placeholder="Enter Due Date" name="duedate" id = "duedate" required>
 
                           <label for="notes"><b>Notes</b></label><br>
                           <textarea name = "notes" class = "field" rows = "4" cols = "20" id = "notes"></textarea>
-                          <br>
 
-
-                          <div class="accordion">Click to Track Progress</div>
-                          <div class="panel">
-                         
-                            <!--Progress - Research Percentage-->
-                          <section id = "boxes">
-                              <div class = "box">
-                               
-                                  <div class="sign"><p>Research % </p></div>
-                                <span style="display:inline-block">
-
-                                  <input type= "text" name = "research" id = "research" max = "100">
-                              </span>
-                              <div class="container-box">
-                                <svg viewBox="0 0 36 36">
-                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <path class="circle" id="researchfillStroke" stroke-dasharray="1, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <text x="18" y="20.35" class="percentage" id="researchpercentageText">0%</text>
-                                </svg>
-                              </div>
-                              </div>
-                              
-                            <!--Progress - Development Percentage-->
-                              <div class = "box">
-                                  <div class="sign"><p>Development % </p></div>
-                                <span style="display:inline-block">
-                             
-                                  <input type= "text" name = "dev" id= "dev">
-                              </span>
-                              <div class="container-box">
-                                <svg viewBox="0 0 36 36">
-                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <path class="circle" id="devfillStroke" stroke-dasharray="1, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <text x="18" y="20.35" class="percentage" id="devpercentageText">0%</text>
-                                </svg>
-                              </div>
-                              </div>
-                            <!--Progress - Report Writing Percentage-->
-                              <div class = "box">
-                                  <div class="sign"><p>Report Writing % </p></div>
-                                <span style="display:inline-block">
-                             
-                                  <input type= "text" name = "report" id = "report">
-                              </span>
-                              <div class="container-box">
-                                <svg viewBox="0 0 36 36">
-                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <path class="circle" id="reportfillStroke" stroke-dasharray="1, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <text x="18" y="20.35" class="percentage" id="reportpercentageText">0%</text>
-                                </svg>
-                              </div>
-                              </div>
-                              
-                            </section>
+                  
                             
-                          </div>
-                            
-                          
                           <button type = "submit" >Add Assignment</button>
+                     
                         </div>
                       </form>
                     </div>
@@ -228,55 +178,7 @@
 
                           <label for="updateNotes"><b>Notes</b></label><br>
                           <textarea name = "notes"  rows = "4" cols = "20" id = "updateNotes"></textarea>
-                          
-                              
-                          <section id = "boxes">
-                            <div class = "container">
-                              <h3 style = "text-align: center; width: 100%; background-color: #CE3F1B; color: #ffffff; height: 30px">Progress Dashboard</h3>
-                              <div class = "box">
-                                  <div class="sign"><p>Research % </p></div>
-                                <span style="display:inline-block">
-                                  <input type= "text" name = "research" id = "updateResearch" >
-                              </span>
-                              <div class="container-box">
-                                <svg viewBox="0 0 36 36">
-                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <path class="circle" id="newresearchfillStroke" stroke-dasharray="10, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <text x="18" y="20.35" class="percentage" id="newresearchpercentageText">%</text>
-                                </svg>
-                              </div>
-                            </div>
-      
-                              <div class = "box">
-                                  <div class="sign"><p>Development % </p></div>
-                                <span style="display:inline-block">
-                                  <input type= "text" name = "dev" id= "updateDev">
-                              </span>
-                              <div class="container-box">
-                                <svg viewBox="0 0 36 36">
-                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <path class="circle" id="newdevfillStroke" stroke-dasharray="10, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <text x="18" y="20.35" class="percentage" id="newdevpercentageText">%</text>
-                                </svg>
-                              </div>
-                              </div>
-      
-                              <div class = "box">
-                                  <div class="sign"><p>Report Writing % </p></div>
-                                <span style="display:inline-block">
-                                  <input type= "text" name = "report" id = "updateReport">
-                              </span>
-                              <div class="container-box">
-                                <svg viewBox="0 0 36 36">
-                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <path class="circle" id="newreportfillStroke" stroke-dasharray="10, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                  <text x="18" y="20.35" class="percentage" id="newreportpercentageText">%</text>
-                                </svg>
-                              </div>
-                              </div>
-                              </div>
-                            </section>
-                          
+
                         
                             
                           <button type = "submit" onClick="updateAssignmentInDatabase()"  >Update Assignment</button>
@@ -290,69 +192,56 @@
                     
                     <!--Upload Assets-->
                     <div id="modal3" class="modal">
-                      <form class="modal-content animate">
+                      <form class="modal-content animate" id = "updateAssignmentForm" >
                         <div class="imgcontainer">
                           <span onclick="document.getElementById('modal3').style.display='none'" class="close" title="Close Modal">&times;</span>
                         </div>
 
                         <div class="assetModal">
                           <h1>Upload Assets</h2>
-                                <label for="name">Product 1</label>
 
-                                  <input type="text" id="title1" class="form-control editField">
-                                  <input type="file" id="upload1" class="btn btn-default btn-file form-control editField file-upload" readonly>
-                                  <div class="imgPreview"></div>
-
-                                  <label for="name">Product 2</label>
-
-                                  <input type="text" id="title2" class="form-control editField">
-                                  <input type="file" id="upload2" class="btn btn-default btn-file form-control editField file-upload" readonly>
-                                  <div class="imgPreview"></div>
-                               
-                              
-                             
-                                <label for="name">Product 3</label>
-                           
-                                  <input type="text" id="title3" class="form-control editField">
-                                  <input type="file" id="upload3" class="btn btn-default btn-file form-control editField file-upload" readonly>
-                                  <div class="imgPreview"></div>
-                               <button> Save Assets </button>
-                              </div>
-                            </form>
+                          <label for="file-upload" class="custom-file-upload"><i class="fas fa-upload"></i></i> Upload File</label>
+                            <input id="file-upload" type="file"/>
+                            
+                          <button type = "submit" >Save</button>
+            
                         </div>
-          
+                      </form>
+                    </div>
 
 
             
-                    <!--Success Modal -->
+                    <!--Track Progress -->
                     <div id="modal4" class="modal">
-                      <form class="modal-content animate">
+                      <form class="modal-content animate" id = "updateAssignmentForm" >
                         <div class="imgcontainer">
-                          <span onclick="document.getElementById('modal4').style.display='none'; refreshPage()" class="close" title="Close Modal">&times;</span>
+                          <span onclick="document.getElementById('modal4').style.display='none'" class="close" title="Close Modal">&times;</span>
                         </div>
 
                         <div class="progressModal">
-                            <div class="celebrate">
-                          <h3 style = "text-align: center">Great Achievement! </h3>
-                          
-                            <img class="modal-icon u-imgResponsive" src="https://dl.dropboxusercontent.com/s/e1t2hhowjcrs7f5/100daysui_100icon.png" alt="Trophy" />
-                            <h3 style = "text-align: center">Keep up the good work.</h3>  
-                          </div>
-                           
-
+                          <h1>Track Progress</h2>
+                          <h2>Lets set some targets.</h2>
+                          <p>For example, you could add "I aim to complete all research by the end of May."</p>
+                          <span class = "save">
+                            <a href="#">
+                              <i class="fas fa-plus-circle"  style="font-size:48px"  ></i>
+                            </a>
+                          </span>
+                         
+                            
+                          <button type = "submit">Save</button>
+                    
                         </div>
-                 
+                      </form>
                     </div>
+
                 </div>
                   <!--Footer containing app title and copyright info-->
                   <footer>
                       <p1>UoS Assignment Planner | <br>Nichola Armstrong Copyright  &copy; 2018</p1>
                   </footer>
-                  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                
                   <script src="app.js"></script>
-                  <script src="assignments.js"></script>
-                  
-              
                   
                 
     </body>
