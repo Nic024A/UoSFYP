@@ -511,7 +511,7 @@ span.psw {
 
 /*Progress Circles */
 .accordion {
-  background-color: #CE3F1B;
+  background-color: #f7773b;
   color: #ffffff;
   cursor: pointer;
   width: 100%;
@@ -528,16 +528,16 @@ span.psw {
 }
 
 .active, .accordion:hover {
-  background-color: #CE3F1B;
+  background-color: #f7773b;
 }
 
 .panel {
   padding: 0 10px;
-  background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
 
 .container-box{
 	margin: 20px auto;
@@ -698,7 +698,7 @@ margin: 1px;
 
 .card-toggle {
 position: relative;
-height: 200px;
+height: 300px;
 width: 100%;
 opacity: .9;
 }
@@ -710,10 +710,9 @@ opacity: 1;
 .card-toggle label {
 position: absolute;
 top: 0;
-left: 0;
+left: 40;
 width: 100%;
 height: 100%;
-text-indent: -9999px;
 z-index: 1;
 }
 
@@ -723,7 +722,14 @@ text-shadow: 1px 1px #3b3b3b;
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%); 
+font-size:16px;
+text-align: center;
+width: 100%;
+padding:10px;
+box-sizing: border-box;
+border-top-left-radius:15px;
+border-top-right-radius:15px;
 }
 
 .card-toggle input[type="checkbox"] + label + .card-front,
@@ -735,7 +741,6 @@ width: 100%;
 height: 100%;
 border-radius: .5rem;
 text-align: center;
-
 -webkit-transform-style: preserve-3d;
 transform-style: preserve-3d;
 -webkit-backface-visibility: hidden;
@@ -776,4 +781,69 @@ transform: rotateX(179deg);
 box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 -webkit-transform: rotateX(0) rotateY(0);
 transform: rotateX(0) rotateY(0);
+}
+
+
+#content {
+   padding: 5px 20px 10px 20px;
+}
+
+
+.removebtn { 
+  border:none;
+  background: none;
+  color: #999;
+  float:right;
+}
+
+.removebtn:hover {
+  opacity: 0.7;
+}
+
+
+
+#favorite-links li {
+  padding:10px;
+  border-bottom: 1px solid #ccc;
+ 
+}
+
+#favorite-links li:last-child {
+  border:none;
+}
+
+#favorite-links a {
+  color: #333;
+  text-decoration:none;
+}
+
+#favorite-links li:hover {
+  background: #ccc;
+}
+
+#add-link-form {
+  display:none;
+  padding-left:20px;
+  color: #000000;
+  text-align: center;
+}
+
+#add-link-form input {
+  margin: 5px 0;
+  width:250px;
+  color: #333;
+  padding:5px;
+  outline:none;
+  border:none;
+}
+
+
+#new-link-button button, #add-link-form button {
+  margin:10px 0;
+  background: #00b38f;
+  border: none;
+  color: #fff;
+  padding:5px 15px;
+  width:100%;
+  height:35px;
 }

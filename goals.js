@@ -6,14 +6,14 @@ request.onsuccess = function (e) {
     console.log('Database is connected Succesfully!');
     database = e.target.result;
 
-    getallgoals(function(goals) {
-        
+    getallgoals(function (goals) {
+
         var userDate = new Date(goals[0].date);
         var userGoal = goals[0].goalname;
         var today = new Date();
         var diff = 0;
         var days = 1000 * 60 * 60 * 24;
-        
+
         diff = userDate - today;
         countdown = document.getElementById("countdown")
         countdown.innerHTML = Math.floor(diff / days) + ' days until your goal: "' + userGoal + '" is due';
@@ -38,10 +38,10 @@ request.onupgradeneeded = function (e) {
 };
 
 // Event Handler 
-  var addtoDB = document.getElementById('addGoalForm');
-    if(addtoDB){
-      addtoDB.addEventListener('submit', addGoalToDatabase);
-    }
+var addtoDB = document.getElementById('addGoalForm');
+if (addtoDB) {
+    addtoDB.addEventListener('submit', addGoalToDatabase);
+}
 
 //Add Goal
 
@@ -53,7 +53,7 @@ function addGoalToDatabase(e) {
     document.getElementById('goalname').value = "";
     document.getElementById('date').value = "";
     document.getElementById('details').value = "";
- 
+
     const goal = {
         goalname,
         date,
@@ -65,68 +65,68 @@ function addGoalToDatabase(e) {
     var request = database.transaction(["allGoals"], "readwrite")
         .objectStore("allGoals")
         .add(goal);
-      
+
 
     request.onsuccess = e => {
         getallgoals();
-   
+
         window.location.href = 'goals.html';
-        
-        
-        
+
+
+
         console.log('Written with e => ', e)
     };
     request.onerror = e => console.log('Error with e => ', e);
 
 };
 
-  //Read all data from DB
+//Read all data from DB
 
-  function getallgoals(cb) {
-      let goalArray = [];
-      var request = database.transaction(["allGoals"], "readwrite")
-          .objectStore("allGoals")
-          .openCursor()
-          .onsuccess = (e) => {
+function getallgoals(cb) {
+    let goalArray = [];
+    var request = database.transaction(["allGoals"], "readwrite")
+        .objectStore("allGoals")
+        .openCursor()
+        .onsuccess = (e) => {
 
-          
-              let cursor = e.target.result;
-              if (cursor) {
-                  let newGoalObject = {
-                      id: cursor.value.id,
-                      goalname: cursor.value.goalname,
-                      date: cursor.value.date,
-                      details: cursor.value.details
-                    
-                  };
-                  goalArray.push(newGoalObject);
-                  cursor.continue();
-              }
-              
-              PrintToDom(goalArray)
-              cb(goalArray)
-              
-          }
-          
 
-  };
+            let cursor = e.target.result;
+            if (cursor) {
+                let newGoalObject = {
+                    id: cursor.value.id,
+                    goalname: cursor.value.goalname,
+                    date: cursor.value.date,
+                    details: cursor.value.details
 
-    // Print to DOM
+                };
+                goalArray.push(newGoalObject);
+                cursor.continue();
+            }
 
-    function PrintToDom(docs) {
-        localStorage.setItem("goalArray", JSON.stringify(docs));
-        let upcomingGoalContainer = document.getElementById('upcomingGoals');
-        var upcomingGoal = document.getElementById('upcomingGoals');
-        if(upcomingGoal){
-            upcomingGoal.innerHTML = "";
+            PrintToDom(goalArray)
+            cb(goalArray)
+
         }
-        let unCompletedGoal = [];
-        docs.map(item => {
 
-        
-                unCompletedGoal.push(item);
-        })
-  
+
+};
+
+// Print to DOM
+
+function PrintToDom(docs) {
+    localStorage.setItem("goalArray", JSON.stringify(docs));
+    let upcomingGoalContainer = document.getElementById('upcomingGoals');
+    var upcomingGoal = document.getElementById('upcomingGoals');
+    if (upcomingGoal) {
+        upcomingGoal.innerHTML = "";
+    }
+    let unCompletedGoal = [];
+    docs.map(item => {
+
+
+        unCompletedGoal.push(item);
+    })
+
 
     // Upcoming Assignments
 
@@ -151,8 +151,8 @@ function addGoalToDatabase(e) {
             <br>
             <br>
         `
-                   
-        ;
+
+                ;
 
         })
 
@@ -164,150 +164,150 @@ function addGoalToDatabase(e) {
 
 }
 
-        // Delete data
+// Delete data
 
-        function deletetheGoalFromDatabase(id) {
-        if (confirm('Are you sure you want to delete this goal?')) {
-            var request = database.transaction(["allGoals"], "readwrite")
-                .objectStore("allGoals")
-                .delete(id);
-            request.onsuccess = () => {
-                getallgoals();
-                location.reload();
-            };
-            
-        } else {
-            // Do nothing!
-        }
+function deletetheGoalFromDatabase(id) {
+    if (confirm('Are you sure you want to delete this goal?')) {
+        var request = database.transaction(["allGoals"], "readwrite")
+            .objectStore("allGoals")
+            .delete(id);
+        request.onsuccess = () => {
+            getallgoals();
+            location.reload();
         };
 
-
-    
-
-        // Update data
-
-        function updateGoalInDatabase() {
-
-            let id = localStorage.getItem('goalToUpdate');
-            var objectStore = database.transaction(["allGoals"], "readwrite")
-                .objectStore("allGoals");
-            const myDesiredObject = objectStore.get(Number(id));
-            myDesiredObject.onerror = e => console.log('error');
-
-            myDesiredObject.onsuccess = function (event) {
-
-                let updatedGoalName = document.getElementById("updateGoalName").value;
-                let updatedDate = document.getElementById("updateDate").value;
-                let updatedDetails = document.getElementById("updateDetails").value;
-                document.getElementById("updateGoalName").value = "";
-                document.getElementById("updateDate").value = "";
-                document.getElementById("updateDetails").value = "";
+    } else {
+        // Do nothing!
+    }
+};
 
 
-                goal = event.target.result;
-                goal.goalname = updatedGoalName;
-                goal.date = updatedDate;
-                goal.details = updatedDetails;
-           
-                const requestUpdate = objectStore.put(goal);
-                requestUpdate.onsuccess = e => {
-                    getallgoals();
 
-                };
-                requestUpdate.onerror = e => console.log('Some error!');
-            }
+
+// Update data
+
+function updateGoalInDatabase() {
+
+    let id = localStorage.getItem('goalToUpdate');
+    var objectStore = database.transaction(["allGoals"], "readwrite")
+        .objectStore("allGoals");
+    const myDesiredObject = objectStore.get(Number(id));
+    myDesiredObject.onerror = e => console.log('error');
+
+    myDesiredObject.onsuccess = function (event) {
+
+        let updatedGoalName = document.getElementById("updateGoalName").value;
+        let updatedDate = document.getElementById("updateDate").value;
+        let updatedDetails = document.getElementById("updateDetails").value;
+        document.getElementById("updateGoalName").value = "";
+        document.getElementById("updateDate").value = "";
+        document.getElementById("updateDetails").value = "";
+
+
+        goal = event.target.result;
+        goal.goalname = updatedGoalName;
+        goal.date = updatedDate;
+        goal.details = updatedDetails;
+
+        const requestUpdate = objectStore.put(goal);
+        requestUpdate.onsuccess = e => {
+            getallgoals();
+
+        };
+        requestUpdate.onerror = e => console.log('Some error!');
+    }
+};
+
+//Set ID to Local storage when updating an assignment.
+function setIdToLocalStorage(id) {
+    localStorage.setItem("goalToUpdate", id);
+    const goalArray = JSON.parse(localStorage.getItem('goalArray'));
+    const ourDesiredGoal = goalArray.filter(item => item.id === Number(id));
+    if (ourDesiredGoal) {
+        document.getElementById('updateGoalName').value = ourDesiredGoal[0].goalname;
+        document.getElementById('updateDate').value = ourDesiredGoal[0].date;
+        document.getElementById('updateDetails').value = ourDesiredGoal[0].details;
+        localStorage.setItem('id', id);
+    };
+}
+
+
+//Ask user if they want to delete assignment from database when completed
+function completeGoalInDatabase(id) {
+    if (confirm('Well done! Do you want to remove this goal from the list?')) {
+        var request = database.transaction(["allGoals"], "readwrite")
+            .objectStore("allGoals")
+            .delete(id);
+        request.onsuccess = () => {
+            getallgoals();
+
         };
 
-        //Set ID to Local storage when updating an assignment.
-        function setIdToLocalStorage(id) {
-            localStorage.setItem("goalToUpdate", id);
-            const goalArray = JSON.parse(localStorage.getItem('goalArray'));
-            const ourDesiredGoal = goalArray.filter(item => item.id === Number(id));
-            if (ourDesiredGoal) {
-                document.getElementById('updateGoalName').value = ourDesiredGoal[0].goalname;
-                document.getElementById('updateDate').value = ourDesiredGoal[0].date;
-                document.getElementById('updateDetails').value = ourDesiredGoal[0].details;
-                localStorage.setItem('id', id);
-            };
-        }
+        //Show success Modal and start confetti
+        document.getElementById('modal5').style.display = 'block';
 
 
-         //Ask user if they want to delete assignment from database when completed
-         function completeGoalInDatabase(id) {
-            if (confirm('Well done! Do you want to remove this goal from the list?')) {
-                var request = database.transaction(["allGoals"], "readwrite")
-                    .objectStore("allGoals")
-                    .delete(id);
-                request.onsuccess = () => {
-                    getallgoals();
-                   
-                };
+    } else {
+        // Do nothing!
+    }
+};
 
-               //Show success Modal and start confetti
-                document.getElementById('modal5').style.display='block'; 
-                     
+//Refresh page when user completes an assignment so the countdown banner is updated
+function refreshPage() {
+    location.reload();
+}
+//Confetti Celebration when user completes assignment.
 
-            } else {
-                // Do nothing!
-            }
-            };
+for (var i = 0; i < 250; i++) {
+    create(i);
+}
 
-           //Refresh page when user completes an assignment so the countdown banner is updated
-           function refreshPage(){
-                 location.reload();
-            }
-               //Confetti Celebration when user completes assignment.
+function create(i) {
+    var width = Math.random() * 8;
+    var height = width * 0.4;
+    var colourIdx = Math.ceil(Math.random() * 3);
+    var colour = "red";
+    switch (colourIdx) {
+        case 1:
+            colour = "yellow";
+            break;
+        case 2:
+            colour = "blue";
+            break;
+        default:
+            colour = "red";
+    }
+    $('<div class="confetti-' + i + ' ' + colour + '"></div>').css({
+        "width": width + "px",
+        "height": height + "px",
+        "top": -Math.random() * 20 + "%",
+        "left": Math.random() * 100 + "%",
+        "opacity": Math.random() + 0.5,
+        "transform": "rotate(" + Math.random() * 360 + "deg)"
+    }).appendTo('.celebrate');
 
-               for (var i = 0; i < 250; i++) {
-                create(i);
-              }
-              
-              function create(i) {
-                var width = Math.random() * 8;
-                var height = width * 0.4;
-                var colourIdx = Math.ceil(Math.random() * 3);
-                var colour = "red";
-                switch(colourIdx) {
-                  case 1:
-                    colour = "yellow";
-                    break;
-                  case 2:
-                    colour = "blue";
-                    break;
-                  default:
-                    colour = "red";
-                }
-                $('<div class="confetti-'+i+' '+colour+'"></div>').css({
-                  "width" : width+"px",
-                  "height" : height+"px",
-                  "top" : -Math.random()*20+"%",
-                  "left" : Math.random()*100+"%",
-                  "opacity" : Math.random()+0.5,
-                  "transform" : "rotate("+Math.random()*360+"deg)"
-                }).appendTo('.celebrate');  
-                
-                drop(i);
-              }
-              
-              function drop(x) {
-                $('.confetti-'+x).animate({
-                  top: "100%",
-                  left: "+="+Math.random()*15+"%"
-                }, Math.random()*3000 + 3000, function() {
-                  reset(x);
-                });
-              }
-              
-              function reset(x) {
-                $('.confetti-'+x).animate({
-                  "top" : -Math.random()*20+"%",
-                  "left" : "-="+Math.random()*15+"%"
-                }, 0, function() {
-                  drop(x);             
-                });
-              }
-            
+    drop(i);
+}
 
-                            
-                
-            
+function drop(x) {
+    $('.confetti-' + x).animate({
+        top: "100%",
+        left: "+=" + Math.random() * 15 + "%"
+    }, Math.random() * 3000 + 3000, function () {
+        reset(x);
+    });
+}
+
+function reset(x) {
+    $('.confetti-' + x).animate({
+        "top": -Math.random() * 20 + "%",
+        "left": "-=" + Math.random() * 15 + "%"
+    }, 0, function () {
+        drop(x);
+    });
+}
+
+
+
+
+
