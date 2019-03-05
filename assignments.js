@@ -19,6 +19,7 @@ request.onsuccess = function (e) {
         countdown = document.getElementById("countdown")
         countdown.innerHTML = Math.floor(diff / days) + ' days until "' + userAssignment + '" is due';
 
+        
     
     });
 };
@@ -171,7 +172,7 @@ function PrintToDom(docs) {
             <div class="assignment-details" > Notes: ${item.notes}</div>
 
             </div>
-           
+            <div class = "view_assets" onclick="document.getElementById('modal3').style.display='block'">Upload Files</div> 
             <div class = "track_progress" onclick="completeAssignmentInDatabase(${item.id})">Complete 🏆</div> 
             <br>
             <br>
@@ -519,6 +520,15 @@ function completeAssignmentInDatabase(id) {
         // Do nothing!
     }
 };
+
+//Ask user if they want to delete assignment from database when completed
+function addImagetoAssignment() {
+  
+        //Show success Modal and start confetti
+        document.getElementById('modal3').style.display = 'block';
+
+
+    } 
 //Refresh page when user completes an assignment so the countdown banner is updated
 function refreshPage() {
     location.reload();

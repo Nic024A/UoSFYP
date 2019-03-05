@@ -120,7 +120,6 @@
 
     <br>
     <br>
-    <button style = "background-color:#CE3F1B; width: 40%; padding-top: 10px; margin: 15px" onclick="document.getElementById('modal3').style.display='block';" ><i class="fas fa-upload" style = "padding-right:10px; font-weight: none; "></i>   Upload Files</button>
     <!--Add Button-->
     <span class="save">
       <a href="#">
@@ -341,29 +340,28 @@
           <div class="sign">
             <p style = "font-size: 20px">Upload Files:</p>
           </div>
-            <label for="name">Product 1</label>
+            
+          <p style = "margin:5%; text-align: center ">You can upload a maximum of 3 JPG files.</p>
 
-            <input type="text" id="title1" class="form-control editField">
-            <input type="file" id="upload1" class="btn btn-default btn-file form-control editField file-upload"
-              readonly>
+          <div class="browse-wrap">
+            <div class="title">Choose a file to upload</div>
+            <input type="file" name="upload" class="file-upload" title="Choose a file to upload" id = "upload1">
+        </div> 
+          
             <div class="imgPreview"></div>
 
-            <label for="name">Product 2</label>
-
-            <input type="text" id="title2" class="form-control editField">
-            <input type="file" id="upload2" class="btn btn-default btn-file form-control editField file-upload"
-              readonly>
+            <div class="browse-wrap">
+              <div class="title">Choose a file to upload</div>
+              <input type="file" name="upload" class="file-upload" title="Choose a file to upload" id = "upload2">
+          </div> 
             <div class="imgPreview"></div>
 
-
-
-            <label for="name">Product 3</label>
-
-            <input type="text" id="title3" class="form-control editField">
-            <input type="file" id="upload3" class="btn btn-default btn-file form-control editField file-upload"
-              readonly>
+            <div class="browse-wrap">
+              <div class="title">Choose a file to upload</div>
+              <input type="file" name="upload" class="file-upload" title="Choose a file to upload" id = "upload3">
+          </div> 
             <div class="imgPreview"></div>
-            <button onclick="addAssetToAssignment()"> Save Assets </button>
+  
         </div>
       </form>
     </div>
