@@ -18,6 +18,8 @@ request.onsuccess = function (e) {
         diff = userDate - today;
         countdown = document.getElementById("countdown")
         countdown.innerHTML = Math.floor(diff / days) + ' days until "' + userAssignment + '" is due';
+
+    
     });
 };
 
@@ -102,8 +104,6 @@ function addToDatabase(e) {
 
 function getAllFromDatabase(cb) {
     let assignmentArray = [];
-    let completedAssignment = [];
-    let unCompletedAssignment = [];
     var request = database.transaction(["allAssignments"], "readwrite")
         .objectStore("allAssignments")
         .openCursor()
@@ -171,7 +171,7 @@ function PrintToDom(docs) {
             <div class="assignment-details" > Notes: ${item.notes}</div>
 
             </div>
-            <div class = "view_assets" onclick="document.getElementById('modal3').style.display='block'; setIdToLocalStorage(${item.id}); " style="width:auto;" >View Assets</div> 
+           
             <div class = "track_progress" onclick="completeAssignmentInDatabase(${item.id})">Complete 🏆</div> 
             <br>
             <br>
@@ -528,6 +528,7 @@ function refreshPage() {
 $(document).ready(function () {
     showImages();
 
+
     $("body").on("change", ".file-upload", function () {
         var $input = $(this);
         var file = $input[0].files[0];
@@ -550,5 +551,6 @@ function showImages(content) {
         $('<img />').prop('src', image).appendTo($('.imgPreview').eq(i));
     })
 }
+
 
 

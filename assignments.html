@@ -106,18 +106,21 @@
   <div id="main">
     <h1>Assignments List</h1>
 
+
     <!--Upcoming ASSIGNMENTS-->
 
     <div class="sign">
       <p>UPCOMING Assignments:</p>
     </div>
+   
     <div id="upcomingTask" style="padding: 20px; box-sizing: border-box;">
+   
       <!--Assignment Cards-->
     </div>
 
     <br>
     <br>
-
+    <button style = "background-color:#CE3F1B; width: 40%; padding-top: 10px; margin: 15px" onclick="document.getElementById('modal3').style.display='block';" ><i class="fas fa-upload" style = "padding-right:10px; font-weight: none; "></i>   Upload Files</button>
     <!--Add Button-->
     <span class="save">
       <a href="#">
@@ -142,13 +145,13 @@
           <h1>Add assignment</h2>
 
             <label for="name"><b>Assignment Name *</b></label>
-            <input type="text" class="field" placeholder="Enter Assignment Name.." name="name" id="name">
+            <input type="text" class="field" placeholder="Enter Assignment Name.." name="name" id="name" required>
 
             <label for="module"><b>Module</b></label>
             <input type="text" class="field" placeholder="Enter Module Name or Code.." name="module" id="module">
 
             <label for="duedate"><b>Due Date *</b></label><br>
-            <input type="date" class="field" placeholder="Enter Due Date" name="duedate" id="duedate">
+            <input type="date" class="field" placeholder="Enter Due Date" name="duedate" id="duedate" required>
 
             <label for="notes"><b>Notes</b></label><br>
             <textarea name="notes" class="field" rows="4" cols="20" id="notes"></textarea>
@@ -157,7 +160,7 @@
 
             <div class="accordion">Click to Track Progress</div>
             <div class="panel">
-
+   
               <!--Progress - Research Percentage-->
               <section id="boxes">
                 <div class="box">
@@ -167,7 +170,7 @@
                   </div>
                   <span style="display:inline-block">
 
-                    <input type="text" name="research" id="research" max="100">
+                    <input type="text" onkeypress="return isNumberKey(event)" name="research" id="research" max="100">
                   </span>
                   <div class="container-box">
                     <svg viewBox="0 0 36 36">
@@ -187,7 +190,7 @@
                   </div>
                   <span style="display:inline-block">
 
-                    <input type="text" name="dev" id="dev">
+                    <input type="text" onkeypress="return isNumberKey(event)" name="dev" id="dev">
                   </span>
                   <div class="container-box">
                     <svg viewBox="0 0 36 36">
@@ -206,7 +209,7 @@
                   </div>
                   <span style="display:inline-block">
 
-                    <input type="text" name="report" id="report">
+                    <input type="text" onkeypress="return isNumberKey(event)" name="report" id="report">
                   </span>
                   <div class="container-box">
                     <svg viewBox="0 0 36 36">
@@ -246,7 +249,7 @@
             <input type="text" placeholder="Enter Assignment Name.." name="name" id="updateName" required>
 
             <label for="updateModule"><b>Module</b></label>
-            <input type="text" placeholder="Enter Module Name or Code.." name="module" id="updateModule" required>
+            <input type="text" placeholder="Enter Module Name or Code.." name="module" id="updateModule" >
 
             <label for="updateDueDate"><b>Due Date *</b></label><br>
             <input type="date" placeholder="Enter Due Date" name="duedate" id="updateDueDate" required>
@@ -264,7 +267,7 @@
                     <p>Research % </p>
                   </div>
                   <span style="display:inline-block">
-                    <input type="text" name="research" id="updateResearch">
+                    <input type="text" onkeypress="return isNumberKey(event)" name="research" id="updateResearch">
                   </span>
                   <div class="container-box">
                     <svg viewBox="0 0 36 36">
@@ -282,7 +285,7 @@
                     <p>Development % </p>
                   </div>
                   <span style="display:inline-block">
-                    <input type="text" name="dev" id="updateDev">
+                    <input type="text" onkeypress="return isNumberKey(event)" name="dev" id="updateDev">
                   </span>
                   <div class="container-box">
                     <svg viewBox="0 0 36 36">
@@ -300,7 +303,7 @@
                     <p>Report Writing % </p>
                   </div>
                   <span style="display:inline-block">
-                    <input type="text" name="report" id="updateReport">
+                    <input type="text" onkeypress="return isNumberKey(event)" name="report" id="updateReport">
                   </span>
                   <div class="container-box">
                     <svg viewBox="0 0 36 36">
@@ -335,7 +338,9 @@
         </div>
 
         <div class="assetModal">
-          <h1>Upload Assets</h2>
+          <div class="sign">
+            <p style = "font-size: 20px">Upload Files:</p>
+          </div>
             <label for="name">Product 1</label>
 
             <input type="text" id="title1" class="form-control editField">
@@ -358,7 +363,7 @@
             <input type="file" id="upload3" class="btn btn-default btn-file form-control editField file-upload"
               readonly>
             <div class="imgPreview"></div>
-            <button> Save Assets </button>
+            <button onclick="addAssetToAssignment()"> Save Assets </button>
         </div>
       </form>
     </div>
