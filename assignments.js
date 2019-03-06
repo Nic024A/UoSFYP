@@ -172,7 +172,7 @@ function PrintToDom(docs) {
             <div class="assignment-details" > Notes: ${item.notes}</div>
 
             </div>
-            <div class = "view_assets" onclick="document.getElementById('modal3').style.display='block'">Upload Files</div> 
+           
             <div class = "track_progress" onclick="completeAssignmentInDatabase(${item.id})">Complete 🏆</div> 
             <br>
             <br>
