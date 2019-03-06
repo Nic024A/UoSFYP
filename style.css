@@ -309,7 +309,7 @@ input, textarea{
   }
 
 /* Set a style for all buttons */
-button, .complete{
+button, .complete, #add{
   background-color: #00b38f;
   font-weight: bold;
   color: white;
@@ -835,14 +835,7 @@ transform: rotateX(0) rotateY(0);
   text-align: center;
 }
 
-#add-link-form input {
-  margin: 5px 0;
-  width:250px;
-  color: #333;
-  padding:5px;
-  outline:none;
-  border:none;
-}
+
 
 
 #new-link-button button, #add-link-form button {

@@ -106,7 +106,11 @@
   <div id="main">
     <h1>Assignments List</h1>
 
-
+    <div class="container1">
+        <h3>Keep on top of your assignments by recording them here.</h3>
+        <p>Upload images related to your assignments using the button below.</p>
+        <button onclick="document.getElementById('modal3').style.display='block'">View Assets 📷</button>
+      </div>
     <!--Upcoming ASSIGNMENTS-->
 
     <div class="sign">
@@ -337,30 +341,73 @@
         </div>
 
         <div class="assetModal">
+
+            <div id="container3">
+                <div id="header">
+                  <div class="sign">
+                    <p>Favorite Links:</p>
+                  </div>
+                  <div id="new-link-button">
+                      <span class="save">
+                          <a href="#">
+                            <i class="fas fa-plus-circle" style="font-size:36px;"></i>
+                          </a>
+                        </span>
+                        <br>
+                </div>
+                <div id="content">
+                  <ul id="favorite-links">
+                    <li>
+                      <a href="https://www.sunderland.ac.uk/">Sunderland University</a>
+                    </li>
+                    <li>
+                      <a href="https://citethemrightonline.com/">Cite Them Right</a>
+                    </li>
+                    <li>
+                      <a href="https://www.gov.uk/student-finance">Student Finance</a>
+                    </li>
+                  </ul>
+                    
+                  </div>
+
+
+                  
+                </div>
+                <div id="add-link-form">
+                  <label>TITLE</label><br/>
+                  <input id="title" type = "text" placeholder="Title of Website">
+                  <br>
+                  <label>URL</label><br>
+                  <input id="url" type = "text" value="http://" /><br>
+                 <div id = "add" style = "padding: 6px 10px">Add</div>
+                </div>
+              </div>
+              
           <div class="sign">
-            <p style = "font-size: 20px">Upload Files:</p>
+            <p>Upload Files:</p>
           </div>
             
           <p style = "margin:5%; text-align: center ">You can upload a maximum of 3 JPG files.</p>
 
           <div class="browse-wrap">
             <div class="title">Choose a file to upload</div>
-            <input type="file" name="upload" class="file-upload" title="Choose a file to upload" id = "upload1">
+            <input type="file" accept="image/*" name="upload" class="file-upload" title="Choose a file to upload" id = "upload1">
         </div> 
           
             <div class="imgPreview"></div>
 
             <div class="browse-wrap">
               <div class="title">Choose a file to upload</div>
-              <input type="file" name="upload" class="file-upload" title="Choose a file to upload" id = "upload2">
+              <input type="file" accept="image/*" name="upload" class="file-upload" title="Choose a file to upload" id = "upload2">
           </div> 
             <div class="imgPreview"></div>
 
             <div class="browse-wrap">
               <div class="title">Choose a file to upload</div>
-              <input type="file" name="upload" class="file-upload" title="Choose a file to upload" id = "upload3">
+              <input type="file" accept="image/*" name="upload" class="file-upload" title="Choose a file to upload" id = "upload3">
           </div> 
             <div class="imgPreview"></div>
+        
   
         </div>
       </form>
