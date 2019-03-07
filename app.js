@@ -51,7 +51,7 @@ $(document).ready(function () {
   $('#add').click(function () {
 
     //add new item
-    $('#favorite-links').append('<li><a href="' + $url.val() + '">' + $title.val());
+    $('#favorite-links').append('<li><a href="' + $url.val() + '" target="_blank">' + $title.val());
 
     //save changes to localstorage
     localStorage.setItem('vk-links', $ul.html());
