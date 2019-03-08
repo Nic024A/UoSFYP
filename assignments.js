@@ -19,8 +19,6 @@ request.onsuccess = function (e) {
         countdown = document.getElementById("countdown")
         countdown.innerHTML = Math.floor(diff / days) + ' days until "' + userAssignment + '" is due';
 
-        
-    
     });
 };
 
@@ -92,6 +90,8 @@ function addToDatabase(e) {
         getAllFromDatabase();
 
         window.location.href = 'assignments.html';
+        
+
 
 
 
@@ -184,6 +184,8 @@ function PrintToDom(docs) {
     } else {
         upTask.innerHTML = `<div class="white-text" style="font-size: 20px; text-align: center;">You currently have no upcoming assignments. Tap '+' to add.
         </div>`
+        countdown = document.getElementById("countdown")
+        countdown.innerHTML = 'No Assignments';
 
     }
 
