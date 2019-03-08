@@ -158,7 +158,9 @@ function PrintToDom(docs) {
 
     } else {
         upcomingGoal.innerHTML = `<div class="white-text" style="font-size: 20px; text-align: center;">You currently have no goals. Tap '+' to add.
-        </div>`
+        </div>
+        countdown = document.getElementById("countdown")
+        countdown.innerHTML = 'No Goals';`
 
     }
 
